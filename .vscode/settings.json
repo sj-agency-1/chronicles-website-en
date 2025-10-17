@@ -2,7 +2,11 @@
   "css.customData": ["./vscode.tailwind.json"],
   "eslint.validate": ["javascript", "javascriptreact", "astro", "typescript", "typescriptreact"],
   "files.associations": {
-    "*.mdx": "markdown"
+    "*.mdx": "markdown",
+    "*.chatmode.md": "markdown",
+    "*.instructions.md": "markdown",
+    "copilot-instructions.md": "markdown",
+    "*.prompt.md": "markdown"
   },
   "prettier.documentSelectors": ["**/*.astro"],
   "[astro]": {
@@ -11,5 +15,30 @@
   "yaml.schemas": {
     "./.vscode/astrowind/config-schema.json": "/src/config.yaml"
   },
-  "eslint.useFlatConfig": true
+  "eslint.useFlatConfig": true,
+
+  "chat.agent.enabled": true,
+  "chat.agent.maxRequests": 15,
+  "chat.mcp.discovery.enabled": {},
+  "github.copilot.chat.agent.autoFix": true,
+
+  "chat.modeFilesLocations": {
+    "chatmodes": true
+  },
+  "chat.promptFilesLocations": {
+    "prompts": true
+  },
+  "chat.instructionsFilesLocations": {
+    "instructions": true
+  },
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false,
+    "editor.formatOnSave": true
+  },
+  "editor.rulers": [100],
+
+  "markdown.validate.enabled": false
 }
