@@ -1,15 +1,15 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from '~/layouts/BaseLayout.astro';
 
-import Header from '~/components/widgets/Header.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Content from '~/components/widgets/Content.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import { getPermalink } from '~/utils/permalinks';
+// import Header from '~/components/widgets/Header.astro';
+// import Hero from '~/components/widgets/Hero.astro';
+// import Content from '~/components/widgets/Content.astro';
+// import CallToAction from '~/components/widgets/CallToAction.astro';
+// import Features3 from '~/components/widgets/Features3.astro';
+// import Testimonials from '~/components/widgets/Testimonials.astro';
+// import Steps from '~/components/widgets/Steps.astro';
+// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+// import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'Personal Homepage Demo',
@@ -19,7 +19,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <Fragment slot="announcement"></Fragment>
   <Fragment slot="header">
-    <Header
+    <!-- <Header
       links={[
         { text: 'Home', href: '#' },
         { text: 'About', href: '#about' },
@@ -36,12 +36,12 @@ const metadata = {
       ]}
       isSticky
       showToggleTheme
-    />
+    /> -->
   </Fragment>
 
   <!-- Hero2 Widget ******************* -->
 
-  <Hero
+  <!-- <Hero
     id="hero"
     title="Sarah Johnson"
     tagline="Personal Web Demo"
@@ -52,11 +52,11 @@ const metadata = {
       New York University's School of Design. I infuse vitality into brands and designs, transforming concepts into captivating
       realities.
     </Fragment>
-  </Hero>
+  </Hero> -->
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     id="about"
     columns={3}
     items={[
@@ -109,11 +109,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Steps Widget ****************** -->
 
-  <Steps
+  <!-- <Steps
     id="resume"
     title="Work experience"
     items={[
@@ -131,11 +131,11 @@ const metadata = {
       },
     ]}
     classes={{ container: 'max-w-3xl' }}
-  />
+  /> -->
 
   <!-- Steps Widget ****************** -->
 
-  <Steps
+  <!-- <Steps
     id="resume"
     title="Education"
     items={[
@@ -149,11 +149,11 @@ const metadata = {
       },
     ]}
     classes={{ container: 'max-w-3xl' }}
-  />
+  /> -->
 
   <!-- Features3 Widget ************** -->
 
-  <Features3
+  <!-- <Features3
     title="Skills"
     subtitle="Discover the proficiencies that allow me to bring imagination to life through design."
     columns={3}
@@ -196,11 +196,11 @@ const metadata = {
         description: 'Quick to adapt to new design trends, technologies, and client preferences.',
       },
     ]}
-  />
+  /> -->
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     id="porfolio"
     title="Elevating visual narratives"
     subtitle="Embark on a design journey that surpasses pixels, entering a realm of imagination. Explore my portfolio, where passion and creativity converge to shape enthralling visual narratives."
@@ -237,11 +237,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isReversed
     isAfterContent={true}
     items={[
@@ -275,11 +275,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isReversed
     isAfterContent={true}
     items={[
@@ -312,11 +312,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Testimonials Widget *********** -->
 
-  <Testimonials
+  <!-- <Testimonials
     title="Client testimonials"
     subtitle="Discover what clients have to say about their experiences working with me."
     testimonials={[
@@ -375,11 +375,11 @@ const metadata = {
         },
       },
     ]}
-  />
+  /> -->
 
   <!-- CallToAction Widget *********** -->
 
-  <CallToAction
+  <!-- <CallToAction
     title="Let's create together"
     subtitle="Ready to transform your vision into captivating designs?"
     actions={[
@@ -389,11 +389,11 @@ const metadata = {
         href: '/',
       },
     ]}
-  />
+  /> -->
 
   <!-- BlogLatestPost Widget **************** -->
 
-  <BlogLatestPosts
+  <!-- <BlogLatestPosts
     id="blog"
     title="Explore my insightful articles on my blog"
     information={`Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey.`}
@@ -401,5 +401,5 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </BlogLatestPosts>
+  </BlogLatestPosts> -->
 </Layout>

@@ -1,31 +1,31 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+// import Layout from '~/layouts/BaseLayout.astro';
 
-import Header from '~/components/widgets/Header.astro';
+// import Header from '~/components/widgets/Header.astro';
 
-import Hero2 from '~/components/widgets/Hero2.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Content from '~/components/widgets/Content.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
+// import Hero2 from '~/components/widgets/Hero2.astro';
+// import CallToAction from '~/components/widgets/CallToAction.astro';
+// import Features3 from '~/components/widgets/Features3.astro';
+// import Content from '~/components/widgets/Content.astro';
+// import Testimonials from '~/components/widgets/Testimonials.astro';
+// import FAQs from '~/components/widgets/FAQs.astro';
+// import Stats from '~/components/widgets/Stats.astro';
 
-import Button from '~/components/ui/Button.astro';
-import Image from '~/components/common/Image.astro';
+// import Button from '~/components/ui/Button.astro';
+// import Image from '~/components/common/Image.astro';
 
-const appStoreImg = '~/assets/images/app-store.png';
-const appStoreDownloadLink = 'https://github.com/arthelokyo/astrowind';
+// const appStoreImg = '~/assets/images/app-store.png';
+// const appStoreDownloadLink = 'https://github.com/arthelokyo/astrowind';
 
-const googlePlayImg = '~/assets/images/google-play.png';
-const googlePlayDownloadLink = 'https://github.com/arthelokyo/astrowind';
+// const googlePlayImg = '~/assets/images/google-play.png';
+// const googlePlayDownloadLink = 'https://github.com/arthelokyo/astrowind';
 
-const metadata = {
-  title: 'Mobile App Homepage',
-};
+// const metadata = {
+//   title: 'Mobile App Homepage',
+// };
 ---
 
-<Layout metadata={metadata}>
+<!-- <Layout metadata={metadata}>
   <Fragment slot="announcement"></Fragment>
   <Fragment slot="header">
     <Header
@@ -44,11 +44,7 @@ const metadata = {
       isSticky
       showToggleTheme
     />
-  </Fragment>
-
-  <!-- Hero2 Widget ******************* -->
-
-  <Hero2
+  </Fragment> --><!-- Hero2 Widget ******************* --><!-- <Hero2
     tagline="Mobile App Web Demo"
     image={{
       src: 'https://images.unsplash.com/photo-1535303311164-664fc9ec6532?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
@@ -56,9 +52,7 @@ const metadata = {
     }}
   >
     <Fragment slot="title">
-      <span class="text-accent dark:text-white">AstroWind App</span>: <br /> professional websites <span
-        class="hidden xl:inline">made easy</span
-      >
+      <span class="text-accent dark:text-white">AstroWind App</span>: <br /> professional websites <span       class="hidden xl:inline">made easy</span>
     </Fragment>
 
     <Fragment slot="subtitle">
@@ -77,11 +71,7 @@ const metadata = {
         <Image src={googlePlayImg} alt="Google Play Image" width={200} />
       </Button>
     </div>
-  </Hero2>
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
+  </Hero2> --><!-- Features3 Widget ************** --><!-- <Features3
     id="features"
     title="How to use our app?"
     subtitle="Tired of spending hours crafting documents from scratch? Our app offers an innovative solution. With a wide array of professionally designed templates, you can now create stunning documents in minutes. Explore our templates now and experience the difference."
@@ -114,11 +104,7 @@ const metadata = {
       src: 'https://images.unsplash.com/photo-1521517407911-565264e7d82d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
       alt: 'Colorful Image',
     }}
-  />
-
-  <!-- Content Widget **************** -->
-
-  <Content
+  /> --><!-- Content Widget **************** --><!-- <Content
     isReversed
     items={[
       {
@@ -153,11 +139,7 @@ const metadata = {
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
     </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
+  </Content> --><!-- Content Widget **************** --><!-- <Content
     isAfterContent
     items={[
       {
@@ -190,10 +172,7 @@ const metadata = {
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Other features</h3>
     </Fragment>
-  </Content>
-
-  <!-- Stats Widget ****************** -->
-
+  </Content> --><!-- Stats Widget ****************** --><!--
   <Stats
     title="Statistics of our app"
     stats={[
@@ -201,11 +180,7 @@ const metadata = {
       { amount: '18.5K', icon: 'tabler:users' },
       { amount: '4.7', icon: 'tabler:user-star' },
     ]}
-  />
-
-  <!-- Testimonials Widget *********** -->
-
-  <Testimonials
+  /> --><!-- Testimonials Widget *********** --><!-- <Testimonials
     title="What our users say?"
     testimonials={[
       {
@@ -243,11 +218,7 @@ const metadata = {
       href: 'https://github.com/arthelokyo/astrowind',
       icon: 'tabler:chevron-right',
     }}
-  />
-
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
+  /> --><!-- FAQs Widget ******************* --><!-- <FAQs
     title="Still have some doubts?"
     items={[
       {
@@ -275,11 +246,7 @@ const metadata = {
           'While the app itself may be free to download, there may be costs associated with purchasing specific templates based on your preferences and project requirements.',
       },
     ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
+  /> --><!-- CallToAction Widget *********** --><!-- <CallToAction
     id="download"
     title="Download our app now!"
     subtitle="Access a variety of stunning templates, simplify your creative process, and elevate your online presence."
@@ -293,5 +260,4 @@ const metadata = {
         <Image src={googlePlayImg} alt="Google Play Image" width={200} />
       </Button>
     </div>
-  </CallToAction>
-</Layout>
+  </CallToAction> --><!-- </Layout> -->

@@ -1,16 +1,16 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from '~/layouts/BaseLayout.astro';
 
-import Header from '~/components/widgets/Header.astro';
-import Hero2 from '~/components/widgets/Hero2.astro';
-import Features from '~/components/widgets/Features.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
-import Content from '~/components/widgets/Content.astro';
-import Pricing from '~/components/widgets/Pricing.astro';
+// import Header from '~/components/widgets/Header.astro';
+// import Hero2 from '~/components/widgets/Hero2.astro';
+// import Features from '~/components/widgets/Features.astro';
+// import Steps2 from '~/components/widgets/Steps2.astro';
+// import Content from '~/components/widgets/Content.astro';
+// import Pricing from '~/components/widgets/Pricing.astro';
 
-import { headerData } from '~/navigation';
-import FAQs from '~/components/widgets/FAQs.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+// import { headerData } from '~/navigation';
+// import FAQs from '~/components/widgets/FAQs.astro';
+// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 const metadata = {
   title: 'SaaS Landing Page',
@@ -19,7 +19,7 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <Fragment slot="header">
-    <Header
+    <!-- <Header
       {...headerData}
       actions={[
         {
@@ -35,11 +35,11 @@ const metadata = {
       ]}
       isSticky
     />
-  </Fragment>
+  </Fragment> -->
 
-  <!-- Hero2 Widget ******************* -->
+    <!-- Hero2 Widget ******************* -->
 
-  <Hero2
+    <!-- <Hero2
     tagline="SaaS Web Demo"
     actions={[
       { variant: 'primary', target: '_blank', text: 'Get Started', href: 'https://github.com/arthelokyo/astrowind' },
@@ -61,11 +61,11 @@ const metadata = {
       >
       Seamlessly blend the power of Astro 5.0 and Tailwind CSS to craft websites that resonate with your brand and audience.
     </Fragment>
-  </Hero2>
+  </Hero2> -->
 
-  <!-- Features Widget *************** -->
+    <!-- Features Widget *************** -->
 
-  <Features
+    <!-- <Features
     id="features"
     title="Why choose AstroWind?"
     subtitle="Each of the following features enhances AstroWind's value proposition."
@@ -104,11 +104,11 @@ const metadata = {
         icon: 'tabler:eyeglass',
       },
     ]}
-  />
+  /> -->
 
-  <!-- Content Widget **************** -->
+    <!-- Content Widget **************** -->
 
-  <Content
+    <!-- <Content
     title="Use cases"
     subtitle="Discover how AstroWind's versatile template serves as the ideal solution for various use cases, providing tailored solutions to drive success."
     isReversed
@@ -137,11 +137,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
-  <!-- Content Widget **************** -->
+    <!-- Content Widget **************** -->
 
-  <Content
+    <!-- <Content
     isAfterContent={true}
     items={[
       {
@@ -167,11 +167,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
-  <!-- Content Widget **************** -->
+    <!-- Content Widget **************** -->
 
-  <Content
+    <!-- <Content
     isReversed
     isAfterContent={true}
     items={[
@@ -198,11 +198,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
-  <!-- Content Widget **************** -->
+    <!-- Content Widget **************** -->
 
-  <Content
+    <!-- <Content
     items={[
       {
         title: 'Description:',
@@ -227,11 +227,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
-  <!-- Pricing Widget ******************* -->
+    <!-- Pricing Widget ******************* -->
 
-  <Pricing
+    <!-- <Pricing
     title="Flexible pricing plans"
     prices={[
       {
@@ -270,11 +270,11 @@ const metadata = {
         },
       },
     ]}
-  />
+  /> -->
 
-  <!-- FAQs Widget ******************* -->
+    <!-- FAQs Widget ******************* -->
 
-  <FAQs
+    <!-- <FAQs
     title="Frequently Asked Questions"
     items={[
       {
@@ -304,11 +304,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </FAQs>
+  </FAQs> -->
 
-  <!-- Steps2 Widget ****************** -->
+    <!-- Steps2 Widget ****************** -->
 
-  <Steps2
+    <!-- <Steps2
     title="Reach out to us"
     subtitle="Have questions? Feel free to contact us using the form below. We're here to help!"
     callToAction={{
@@ -332,11 +332,11 @@ const metadata = {
         icon: 'tabler:brand-twitter',
       },
     ]}
-  />
+  /> -->
 
-  <!-- BlogLatestPost Widget **************** -->
+    <!-- BlogLatestPost Widget **************** -->
 
-  <BlogLatestPosts
+    <!-- <BlogLatestPosts
     id="blog"
     title="Stay informed with AstroWind's blog"
     information={`Explore our collection of articles, guides, and tutorials on web development, design trends, and using AstroWind effectively for your projects.`}
@@ -344,5 +344,6 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </BlogLatestPosts>
+  </BlogLatestPosts> -->
+  </Fragment>
 </Layout>
