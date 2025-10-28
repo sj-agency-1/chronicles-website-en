@@ -6,7 +6,6 @@ import Posts from '~/components/blocks/Posts.astro';
 import Projects from '~/components/blocks/Projects.astro';
 import Ad from '~/components/structures/Ad.astro';
 import NeedConsultationCard from '~/components/structures/NeedConsultationCard.astro';
-// import VideoWidget from '~/components/blocks/VideoWidget.astro';
 
 const metadata = {
   title: 'Главная',
@@ -104,17 +103,4 @@ const projects = await findLatestProjects({count: 2});
   />
   <Ad />
   <NeedConsultationCard class="md:hidden max-w-full" />
-
-  <!-- <VideoWidget
-    videoPlayer={{
-      id: 'FwOoC0QdeG4',
-      provider: 'YouTube',
-      title: 'Elephants being elephants',
-    }}
-    watchMethodsList={{
-      vkLink: 'https://google.com',
-      youtubeLink: 'https://google.com',
-      rutubeLink: 'https://google.com',
-    }}
-  /> -->
 </PageLayout>
