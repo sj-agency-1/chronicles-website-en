@@ -47,7 +47,7 @@ const metadataDefinition = () =>
     .optional();
 
 const postCollection = defineCollection({
-  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/content/post' }),
+  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/content/posts' }),
   schema: z.object({
     publishDate: z.date().optional(),
     updateDate: z.date().optional(),
@@ -59,7 +59,26 @@ const postCollection = defineCollection({
 
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
-    author: z.string().optional(),
+    // author: z.string().optional(),
+
+    metadata: metadataDefinition(),
+  }),
+});
+
+const projectCollection = defineCollection({
+  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/content/projects' }),
+  schema: z.object({
+    publishDate: z.date().optional(),
+    updateDate: z.date().optional(),
+    draft: z.boolean().optional(),
+
+    title: z.string(),
+    excerpt: z.string().optional(),
+    image: z.string().optional(),
+
+    category: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    // author: z.string().optional(),
 
     metadata: metadataDefinition(),
   }),
@@ -67,4 +86,5 @@ const postCollection = defineCollection({
 
 export const collections = {
   post: postCollection,
+  project: projectCollection,
 };

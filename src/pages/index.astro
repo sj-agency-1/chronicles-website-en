@@ -14,6 +14,10 @@ const metadata = {
 };
 const tocItems = [{ targetId: 'welcome', chapterTitle: 'Глава 1', chapterDescription: 'Добро пожаловать' }];
 const breadCrumbLinks = [{ text: 'Главная', href: '/' }];
+
+// Load posts
+import { findLatestPosts } from '~/utils/blog';
+const posts = await findLatestPosts({ count: 2 });
 ---
 
 <PageLayout
@@ -65,26 +69,16 @@ const breadCrumbLinks = [{ text: 'Главная', href: '/' }];
 
   <Posts
     title="Познавательно"
-    data={[
-      {
-        id: '123',
-        imageSrc: '~/assets/images/posts/personal-brand.webp',
-        href: 'https://google.com',
+    data={posts.map((post, index) => {
+      return {
+        id: post.id,
+        imageSrc: post.image,
+        href: post.permalink,
         label: 'Анонс',
-        title:
-          'Личный бренд – вот Ваш бизнес-актив, или почему просто «вести блог» недостаточно. Как построить «бизнес «Личный Бренд» с нуля», который будет приносить деньги, а не пожирать Ваше время. Практическое руководство',
-        direction: 'right',
-      },
-      {
-        id: '123',
-        imageSrc: '~/assets/images/posts/personal-brand.webp',
-        href: 'https://google.com',
-        label: 'Анонс',
-        title:
-          'Личный бренд – вот Ваш бизнес-актив, или почему просто «вести блог» недостаточно. Как построить «бизнес «Личный Бренд» с нуля», который будет приносить деньги, а не пожирать Ваше время. Практическое руководство',
-        direction: 'left',
-      },
-    ]}
+        title: (post.excerpt ?? post.title),
+        direction: (index % 2) ? 'left' : 'right' as 'left' | 'right',
+      };
+    })}
   />
   <Projects
     title="Мои проекты"
