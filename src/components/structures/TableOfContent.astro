@@ -7,16 +7,22 @@ export interface TocItem {
 
 interface Props {
   items: Array<TocItem>;
+  mode: 'default' | 'auto';
 }
 
-const { items } = Astro.props as Props;
+const { items = [], mode = 'default' } = Astro.props;
+console.log('TableOfContent - mode:', mode);
 ---
 
-<ul id="toc" class="flex flex-col gap-4" id="toc-list">
-  {
-    items.map((item, index) => (
+<table-of-content
+  class="table-of-content block relative"
+  data-mode={mode}
+  data-items={JSON.stringify(items)}
+>
+  <ul id="toc-list" class="flex flex-col gap-4">
+    {mode === 'default' && items.map((item, index) => (
       <li
-        class="flex items-center justify-between cursor-pointer transition-all duration-300 ease-in-out hover:opacity-70"
+        class="toc-item flex items-center justify-between cursor-pointer transition-all duration-300 ease-in-out hover:opacity-70"
         data-target={item.targetId}
         data-index={index}
         role="button"
@@ -24,98 +30,246 @@ const { items } = Astro.props as Props;
         aria-controls={item.targetId}
       >
         <div class="flex-1">
-          <div class="text-sm text-gray-600">{item.chapterTitle}</div>
+          {item.chapterTitle && <div class="text-sm text-gray-600">{item.chapterTitle}</div>}
           <div class="font-heading text-black font-bold text-base">{item.chapterDescription}</div>
         </div>
         <div class="dot w-4 h-4 bg-black opacity-0 transition-opacity duration-300 ease-in-out" />
       </li>
-    ))
-  }
-</ul>
+    ))}
+  </ul>
+</table-of-content>
 
 <script>
-  // Define elements
-  const tocItems = document.querySelectorAll('#toc li');
-  const targetElements = Array.from(tocItems)
-    .map((item) => {
-      const targetId = item.getAttribute('data-target');
-      if (!targetId) return null;
-      return document.getElementById(targetId);
-    })
-    .filter(Boolean);
+  interface TocItem {
+    targetId: string;
+    chapterTitle: string;
+    chapterDescription: string;
+    element: HTMLHeadingElement;
+  }
 
-  // Function to set active TOC item
-  function setActiveTocItem(index: number) {
-    tocItems.forEach((item, i) => {
-      const indicator = item.querySelector('.dot');
-      if (!indicator) return;
 
-      if (i === index) {
-        indicator.classList.remove('opacity-0');
-        indicator.classList.add('opacity-100');
+  class TableOfContent extends HTMLElement {
+    // Properties
+    tocItems: Array<TocItem>;
+    tocListItems;
+    targetElements;
+    ticking;
+    scrollHandler;
+
+    // Bound event handlers for proper cleanup
+    boundHandleScroll;
+    boundHandleTocItemClick;
+
+    constructor() {
+      super();
+      this.tocItems = [];
+      this.tocListItems = null;
+      this.targetElements = [];
+      this.ticking = false;
+
+      // Bind event handlers
+      this.boundHandleScroll = this.handleScroll.bind(this);
+      this.boundHandleTocItemClick = this.handleTocItemClick.bind(this);
+    }
+
+    connectedCallback() {
+      this.initializeTOC();
+    }
+
+    disconnectedCallback() {
+      this.cleanup();
+    }
+
+    initializeTOC() {
+      const mode = this.dataset.mode || 'default';
+      console.log('TOC Mode:', mode);
+      const itemsData = this.dataset.items;
+      const predefinedItems = itemsData ? JSON.parse(itemsData) : [];
+
+      if (mode === 'auto') {
+        this.tocItems = this.generateTOCFromHeadings();
+        this.renderTOCItems();
       } else {
-        indicator.classList.remove('opacity-100');
-        indicator.classList.add('opacity-0');
-      }
-    });
-  }
-
-  // Function to determine which section is in view
-  function findActiveSection() {
-    const scrollPosition = window.scrollY;
-    const buffer = 100; // Buffer zone to make the detection more user-friendly
-
-    // Find the section that is currently in view
-    for (let i = 0; i < targetElements.length; i++) {
-      const element = targetElements[i];
-      if (!element) continue;
-
-      const rect = element.getBoundingClientRect();
-      const offset = rect.top + scrollPosition;
-
-      // If we're at the last element, we want to activate it when scrolling to the bottom
-      if (
-        i === targetElements.length - 1 &&
-        window.innerHeight + scrollPosition >= document.documentElement.scrollHeight - buffer
-      ) {
-        setActiveTocItem(i);
-        return;
+        this.tocItems = predefinedItems.map(item => ({
+          ...item,
+          element: document.getElementById(item.targetId)
+        }));
       }
 
-      // Check if this section is in view (accounting for the buffer)
-      const nextElement = targetElements[i + 1];
-      const nextOffset = nextElement ? nextElement.getBoundingClientRect().top + scrollPosition - buffer : Infinity;
-
-      if (scrollPosition >= offset - buffer && (i === targetElements.length - 1 || scrollPosition < nextOffset)) {
-        setActiveTocItem(i);
-        return;
-      }
+      this.setupTOCInteractions();
     }
-  }
 
-  // Event listener for scroll
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        findActiveSection();
-        ticking = false;
+    generateTOCFromHeadings() {
+      const HEADING_SELECTOR = 'h2';
+      const headings = document.querySelectorAll(HEADING_SELECTOR);
+      const tocItems: Array<TocItem> = [];
+
+      headings.forEach((heading) => {
+        const headingText = heading.textContent?.trim() || '';
+
+        // Split on first colon to separate chapter title from description
+        const colonIndex = headingText.indexOf(':');
+
+        let chapterTitle;
+        let chapterDescription;
+
+        if (colonIndex !== -1) {
+          chapterTitle = headingText.substring(0, colonIndex).trim();
+          chapterDescription = headingText.substring(colonIndex + 1).trim();
+        } else {
+          chapterDescription = headingText;
+        }
+
+        // Generate targetId or use existing ID
+        let targetId = heading.id;
+        if (!targetId) {
+          targetId = chapterDescription
+            .toLowerCase()
+            .replace(/[^\w\sа-яА-Я-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/--+/g, '-')
+            .replace(/^-|-$/g, '');
+          heading.id = targetId;
+        }
+
+        tocItems.push({
+          targetId,
+          chapterTitle,
+          chapterDescription,
+          element: heading,
+        });
       });
-      ticking = true;
+
+      return tocItems;
     }
-  });
 
-  // Initialize first active section
-  findActiveSection();
+    renderTOCItems() {
+      const tocList = this.querySelector('#toc-list');
+      if (!tocList) return;
 
-  // Add click handlers to TOC items
-  tocItems.forEach((item, index) => {
-    item.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetElement = targetElements[index];
+      tocList.innerHTML = '';
+
+      this.tocItems.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.className = 'toc-item flex items-center justify-between cursor-pointer transition-all duration-300 ease-in-out hover:opacity-70';
+        li.setAttribute('data-target', item.targetId);
+        li.setAttribute('data-index', index.toString());
+        li.setAttribute('role', 'button');
+        li.setAttribute('tabindex', '0');
+        li.setAttribute('aria-controls', item.targetId);
+
+        li.innerHTML = `
+          <div class="flex-1">
+            ${item.chapterTitle ? `<div class="text-sm text-gray-600">${item.chapterTitle}</div>` : ''}
+            <div class="font-heading text-black font-bold text-base">${item.chapterDescription}</div>
+          </div>
+          <div class="dot w-4 h-4 bg-black opacity-0 transition-opacity duration-300 ease-in-out"></div>
+        `;
+
+        tocList.appendChild(li);
+      });
+    }
+
+    setupTOCInteractions() {
+      this.tocListItems = this.querySelectorAll('.toc-item');
+      this.targetElements = this.tocItems.map(item =>
+        document.getElementById(item.targetId)
+      ).filter(Boolean);
+
+      // Add scroll event listener
+      window.addEventListener('scroll', this.boundHandleScroll, { passive: true });
+
+      // Add click handlers to TOC items
+      this.tocListItems.forEach((item, index) => {
+        item.addEventListener('click', (e) => this.boundHandleTocItemClick(e, index));
+      });
+
+      // Initialize first active section
+      this.findActiveSection();
+    }
+
+    handleScroll() {
+      if (!this.ticking) {
+        requestAnimationFrame(() => {
+          this.findActiveSection();
+          this.ticking = false;
+        });
+        this.ticking = true;
+      }
+    }
+
+    handleTocItemClick(event, index) {
+      event.preventDefault();
+      const targetElement = this.targetElements[index];
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth' });
       }
-    });
-  });
+    }
+
+    setActiveTocItem(index) {
+      if (!this.tocListItems) return;
+
+      this.tocListItems.forEach((item, i) => {
+        const indicator = item.querySelector('.dot');
+        if (!indicator) return;
+
+        if (i === index) {
+          indicator.classList.remove('opacity-0');
+          indicator.classList.add('opacity-100');
+        } else {
+          indicator.classList.remove('opacity-100');
+          indicator.classList.add('opacity-0');
+        }
+      });
+    }
+
+    findActiveSection() {
+      const scrollPosition = window.scrollY;
+      const buffer = 100;
+
+      for (let i = 0; i < this.targetElements.length; i++) {
+        const element = this.targetElements[i];
+        if (!element) continue;
+
+        const rect = element.getBoundingClientRect();
+        const offset = rect.top + scrollPosition;
+
+        // Handle last element
+        if (i === this.targetElements.length - 1 &&
+            window.innerHeight + scrollPosition >= document.documentElement.scrollHeight - buffer) {
+          this.setActiveTocItem(i);
+          return;
+        }
+
+        // Check if this section is in view
+        const nextElement = this.targetElements[i + 1];
+        const nextOffset = nextElement ?
+          nextElement.getBoundingClientRect().top + scrollPosition - buffer :
+          Infinity;
+
+        if (scrollPosition >= offset - buffer &&
+            (i === this.targetElements.length - 1 || scrollPosition < nextOffset)) {
+          this.setActiveTocItem(i);
+          return;
+        }
+      }
+    }
+
+    cleanup() {
+      // Remove event listeners
+      window.removeEventListener('scroll', this.boundHandleScroll);
+
+      // Remove click handlers from TOC items
+      if (this.tocListItems) {
+        this.tocListItems.forEach((item, index) => {
+          item.removeEventListener('click', (e) => this.boundHandleTocItemClick(e, index));
+        });
+      }
+    }
+  }
+
+  // Register the custom element if not already defined
+  if (!customElements.get('table-of-content')) {
+    customElements.define('table-of-content', TableOfContent);
+  }
 </script>

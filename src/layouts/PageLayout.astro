@@ -15,12 +15,13 @@ import { type BreadCrumbLink } from '~/components/structures/BreadCrumbs.astro';
 
 interface Props {
   tocItems?: Array<TocItem>;
+  tocItemsMode?: 'default' | 'auto';
   heroItems?: Array<HeroItem>;
   breadCrumbLinks?: Array<BreadCrumbLink>;
   metadata?: MetaDataType;
 }
 
-const { tocItems, heroItems, breadCrumbLinks, metadata } = Astro.props as Props;
+const { tocItems, tocItemsMode = 'default', heroItems, breadCrumbLinks, metadata } = Astro.props as Props;
 ---
 
 <BaseLayout {...Astro.props} {metadata}>
@@ -30,7 +31,7 @@ const { tocItems, heroItems, breadCrumbLinks, metadata } = Astro.props as Props;
   </Container>
   <Container class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-5 mb-16">
     <div class="sticky top-24 self-start hidden lg:block">
-      <Sidebar tocItems={tocItems} />
+      <Sidebar {tocItems} {tocItemsMode} />
     </div>
     <main class="md:col-span-3 min-h-96">
       <BreadCrumbs links={breadCrumbLinks} />
