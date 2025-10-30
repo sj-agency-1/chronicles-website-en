@@ -1,0 +1,44 @@
+---
+import Content from '~/components/common/Content.astro';
+import PageLayout from '~/layouts/PageLayout.astro';
+import Button from '~/components/common/Button.astro';
+
+const metadata = {
+  title: 'Главная',
+  ignoreTitleTemplate: true,
+};
+const breadCrumbLinks = [
+  { text: 'Главная', href: '/' },
+  { text: 'Донат', href: '/donate' },
+];
+
+const bankCardLink = 'https://www.example.com/bank-card-donate';
+const cryptocurrencyLink = 'https://www.example.com/cryptocurrency-donate';
+---
+
+<PageLayout
+  {breadCrumbLinks}
+  {metadata}
+  heroItems={[
+    {
+      title: 'Донат',
+      bgImage: '~/assets/images/pages/donation.webp',
+    },
+  ]}
+>
+  <Content>
+    <h1>Заголовок страницы</h1>
+    <p>
+      Это текст-заглушка, использующийся для заполнения пространства в документах и презентациях. Он позволяет
+      визуализировать, как будет выглядеть итоговый продукт. В данном тексте нет смысловой нагрузки, но он помогает
+      понять, как будет выглядеть текстовый контент на странице. Используйте его для тестирования шрифтов, макетов и
+      других элементов дизайна. Важно помнить, что текст должен быть легко читаемым и визуально привлекательным
+    </p>
+    <div class="flex flex-col items-center justify-center mt-8">
+      <span class="font-bold text-primary">Выберите варианты оплаты</span>
+      <div class="flex flex-col sm:flex-row gap-4 mt-4">
+        <Button href={bankCardLink} text="Банковская карта" target='_blank' variant="primary" type="link" />
+        <Button href={cryptocurrencyLink} text="Криптовалюта" target='_blank' variant="primary" type="link" />
+    </div>
+  </Content>
+</PageLayout>
