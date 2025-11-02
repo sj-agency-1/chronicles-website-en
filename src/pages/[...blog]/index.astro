@@ -52,10 +52,9 @@ const breadCrumbLinks = [
   {metadata}
   heroItems={[
     {
-      title: 'Громкий заголовок',
-      description:
-        'Какой то дополнительный текст в несколько строк Какой то дополнительный текст в несколько строк Какой то дополнительный текст в несколько строк.',
-      bgImage: '~/assets/images/hero-1.webp',
+      title: post.hero?.title || post.title,
+      description: post.hero?.description,
+      bgImage: post.hero?.image || post.image,
     },
   ]}
 >

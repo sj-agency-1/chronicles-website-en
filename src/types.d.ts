@@ -86,6 +86,15 @@ export interface Post {
 
   /**  */
   readingTime?: number;
+
+  /**  */
+  hero?: HeroData;
+}
+
+export interface HeroData {
+  title?: string;
+  description?: string;
+  image?: string | unknown;
 }
 
 export interface Taxonomy {
