@@ -9,8 +9,8 @@ import Hero from "~/components/structures/Hero.astro";
 import BreadCrumbs from "~/components/structures/BreadCrumbs.astro";
 import Container from "~/components/common/Container.astro";
 import Content from "~/components/common/Content.astro";
+import SupportButton from "~/components/structures/SupportButton.astro";
 
-import { type TocItem } from "~/components/structures/TableOfContent.astro";
 import { type HeroItem } from "~/components/structures/Hero.astro";
 import { type BreadCrumbLink } from '~/components/structures/BreadCrumbs.astro';
 
@@ -20,6 +20,7 @@ interface Props {
     tocItemsMode?: 'auto' | 'default';
     heroItems?: Array<HeroItem>;
     metadata?: MetaDataType;
+    showSupportButton?: boolean;
   },
   url: string,
 }
@@ -47,6 +48,7 @@ const  breadCrumbLinks: Array<BreadCrumbLink> = [
         <Content>
           <slot />
         </Content>
+        {frontmatter.showSupportButton && <SupportButton />}
       </div>
     </main>
   </Container>
