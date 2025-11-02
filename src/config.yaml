@@ -1,6 +1,6 @@
 site:
   name: Хроники Бизнес-Следопыта
-  site: 'https://example.com' # TODO: Replace with your production URL
+  site: 'https://business-pathfinder-chronicles.com'
   base: '/'
   trailingSlash: false
 
