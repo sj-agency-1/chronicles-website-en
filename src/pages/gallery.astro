@@ -72,7 +72,7 @@ const galleryItems: GalleryItemProps[] = [
       // Increment modal count for proper scroll lock
       const root = document.documentElement;
       const counterKey = '__chroniclesModalCount';
-      const globalScope = window as Record<string, number>;
+      const globalScope = window as unknown as Record<string, number>;
       const current = typeof globalScope[counterKey] === 'number' ? globalScope[counterKey] : 0;
       globalScope[counterKey] = current + 1;
       if (globalScope[counterKey] === 1) {
