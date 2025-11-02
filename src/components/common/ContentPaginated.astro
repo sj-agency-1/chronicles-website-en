@@ -33,7 +33,10 @@ const { class: className = '' } = Astro.props as Props;
 
 <style is:global>
   .content-paginated {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    gap: 1rem;
   }
 
   .content-paginated .content-pages {
@@ -58,6 +61,8 @@ const { class: className = '' } = Astro.props as Props;
     font-weight: 600;
     font-family: 'PP Right Grotesk', inherit;
     color: var(--aw-color-primary);
+    margin-top: 1.75rem;
+    margin-bottom: 1.25rem;
   }
 
   .content-paginated h1 { font-size: 26px; }
