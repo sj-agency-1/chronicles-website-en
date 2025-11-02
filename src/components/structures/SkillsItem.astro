@@ -13,8 +13,8 @@ const { skill, showButton = true, size } = Astro.props as Props;
 ---
 
 <a href={getSkillLink(skill)} rel="noopener noreferrer">
-  <div class="flex justify-between gap-4 items-center group relative">
-    <div class="flex justify-between gap-4 items-center group relative">
+  <div class="flex flex-col items-center gap-3 group relative md:flex-row md:items-center md:justify-between">
+    <div class="flex flex-col items-center gap-2 md:flex-row md:items-center">
       <IconSkill type={skill} size={size} />
       <div class="font-heading font-bold text-black">{getSkillTitle(skill)}</div>
     </div>
