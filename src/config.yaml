@@ -20,6 +20,14 @@ contact:
   telegramUsername: 'arthelokyo'
   whatsappNumber: '79161234567' # Use international format without '+' sign
 
+donation:
+  usdtTrc20Address: 'TNvw1QnD4fDXsPSibv3eFjR113omUwv6b4'
+  usdtErc20Address: '0xC7AD3cbFFD37ece5b2f27088F52879eE066Fc5aA'
+  usdcSolAddress: '4JjXtZFLkAQj3YTRAUabhPLJuHbnSem4X71HADrbLtqh'
+
+  cryptoPaymentLink: 'https://pay.example.com/crypto'
+  bankCardPaymentLink: 'https://pay.example.com/bank-card'
+
 # Default SEO metadata
 metadata:
   title:

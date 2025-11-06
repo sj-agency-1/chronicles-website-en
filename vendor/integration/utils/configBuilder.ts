@@ -6,6 +6,7 @@ export type Config = {
   site?: SiteConfig;
   socials?: SocialsConfig;
   contact?: ContactConfig;
+  donation?: DonationConfig;
   metadata?: MetaDataConfig;
   i18n?: I18NConfig;
   apps?: {
@@ -38,6 +39,15 @@ export interface ContactConfig {
   email?: string;
   telegram?: string;
   whatsapp?: string;
+}
+
+export interface DonationConfig {
+  usdtTrc20Address?: string;
+  usdtErc20Address?: string;
+  usdcSolAddress?: string;
+
+  cryptoPaymentLink?: string;
+  bankCardPaymentLink?: string;
 }
 
 export interface MetaDataConfig extends Omit<MetaData, 'title'> {
@@ -178,6 +188,19 @@ const getContact = (config: Config) => {
   };
 
   return merge({}, _default, config?.contact ?? {}) as ContactConfig;
+}
+
+const getDonation = (config: Config) => {
+  const _default = {
+    usdtTrc20Address: '',
+    usdtErc20Address: '',
+    usdcSolAddress: '',
+    
+    cryptoPaymentLink: '',
+    bankCardPaymentLink: '',
+  };
+
+  return merge({}, _default, config?.donation ?? {}) as DonationConfig;
 }
 
 const getMetadata = (config: Config) => {
@@ -323,6 +346,7 @@ export default (config: Config) => ({
   SITE: getSite(config),
   SOCIALS: getSocials(config),
   CONTACT: getContact(config),
+  DONATION: getDonation(config),
   I18N: getI18N(config),
   METADATA: getMetadata(config),
   APP_BLOG: getAppBlog(config),

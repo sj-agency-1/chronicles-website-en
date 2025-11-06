@@ -1,7 +1,9 @@
 ---
+import { DONATION } from 'astrowind:config';
 import Content from '~/components/common/Content.astro';
 import PageLayout from '~/layouts/PageLayout.astro';
 import Button from '~/components/common/Button.astro';
+import CopyText from '~/components/common/CopyText.astro';
 
 const metadata = {
   title: 'Донат — Поддержка проекта',
@@ -13,8 +15,8 @@ const breadCrumbLinks = [
   { text: 'Донат', href: '/donate' },
 ];
 
-const cryptoLink = 'https://www.example.com/cryptocurrency-donate';
-const bankLink = 'https://www.example.com/bank-card-donate';
+const cryptoLink = DONATION['cryptoPaymentLink'] || 'https://www.example.com/crypto-donate';
+const bankLink = DONATION['bankCardPaymentLink'] || 'https://www.example.com/bank-card-donate';
 ---
 
 <PageLayout
@@ -66,17 +68,23 @@ const bankLink = 'https://www.example.com/bank-card-donate';
         <tr>
           <td class="border border-gray-400 px-4 py-2">USDT</td>
           <td class="border border-gray-400 px-4 py-2">TRC-20 (Tron)</td>
-          <td class="border border-gray-400 px-4 py-2">[Вставить ваш адрес USDT TRC-20]</td>
+          <td class="border border-gray-400 px-4 py-2">
+            <CopyText text={DONATION['usdtTrc20Address']} />
+          </td>
         </tr>
         <tr>
-          <td class="border border-gray-400 px-4 py-2">ETH</td>
+          <td class="border border-gray-400 px-4 py-2">USDT</td>
           <td class="border border-gray-400 px-4 py-2">ERC-20 (Ethereum)</td>
-          <td class="border border-gray-400 px-4 py-2">[Вставить ваш адрес ETH ERC-20]</td>
+          <td class="border border-gray-400 px-4 py-2">
+            <CopyText text={DONATION['usdtErc20Address']} />
+          </td>
         </tr>
         <tr>
-          <td class="border border-gray-400 px-4 py-2">BTC</td>
-          <td class="border border-gray-400 px-4 py-2">Bitcoin</td>
-          <td class="border border-gray-400 px-4 py-2">[Вставить ваш адрес BTC]</td>
+          <td class="border border-gray-400 px-4 py-2">USDC</td>
+          <td class="border border-gray-400 px-4 py-2">Solana</td>
+          <td class="border border-gray-400 px-4 py-2">
+            <CopyText text={DONATION['usdcSolAddress']} />
+          </td>
         </tr>
       </tbody>
     </table>
