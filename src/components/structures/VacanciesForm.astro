@@ -1,4 +1,5 @@
 ---
+import { FORMS_URLS } from 'astrowind:config';
 import Input from '~/components/common/Input.astro';
 import Select from '~/components/common/Select.astro';
 import Textarea from '~/components/common/Textarea.astro';
@@ -13,9 +14,9 @@ const vacancies = [
   'Онлайн ассистент (консультант)',
 ];
 
-let vacancySubmitUrl = 'https://n8n.georgeparkdev.com/webhook-test/submit-vacancy-request';
+let vacancySubmitUrl = FORMS_URLS.vacancyFormTestUrl;
 if (import.meta.env.PROD) {
-  vacancySubmitUrl = 'https://n8n.georgeparkdev.com/webhook/submit-vacancy-request';
+  vacancySubmitUrl = FORMS_URLS.vacancyFormUrl;
 }
 ---
 

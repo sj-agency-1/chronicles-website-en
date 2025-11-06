@@ -4,6 +4,7 @@ declare module 'astrowind:config' {
     SocialsConfig,
     ContactConfig,
     DonationConfig,
+    FormsUrls,
     I18NConfig,
     MetaDataConfig,
     AppBlogConfig,
@@ -16,6 +17,7 @@ declare module 'astrowind:config' {
   export const SOCIALS: SocialsConfig;
   export const CONTACT: ContactConfig;
   export const DONATION: DonationConfig;
+  export const FORMS_URLS: FormsUrls;
   export const I18N: I18NConfig;
   export const METADATA: MetaDataConfig;
   export const APP_BLOG: AppBlogConfig;
