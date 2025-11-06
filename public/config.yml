@@ -2,6 +2,8 @@ backend:
   name: github
   repo: sj-agency-1/chronicles-website
   branch: main
+  site_domain: 68025935-196d-451d-8ab5-ffd2b616c2e3
+  base_url: https://chronicles-website.netlify.app/admin
 
 media_folder: './src/assets/images'
 public_folder: '~/assets/images'
