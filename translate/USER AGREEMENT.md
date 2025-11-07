@@ -1,6 +1,6 @@
 TERMS OF USE (USER AGREEMENT)
 
-GOVERNING LAW: ENGLAND AND WALES & INTERNATIONAL ARBITRATION<br>for the "Business Pathfinder Chronicles" Website at 
+GOVERNING LAW: ENGLAND AND WALES & INTERNATIONAL ARBITRATION<br>for the "Business Pathfinder Chronicles" Website at
 
 Date of Publication/Last Update: October 22, 2025
 
@@ -10,7 +10,7 @@ Date of Publication/Last Update: October 22, 2025
 
 1.2. User (You): Any natural person accessing and using the Website, its Content, and Services.
 
-1.3. Website: The online resource  
+1.3. Website: The online resource
 
 1.4. Content: All intellectual property and information on the Website (texts, media, etc.), protected by the Content Usage Policy.
 
@@ -62,10 +62,10 @@ Date of Publication/Last Update: October 22, 2025
 
 7. MISCELLANEOUS PROVISIONS
 
-7.1. Severability (Safety Net Clause): If any provision of this Agreement is held to be invalid, illegal, or unenforceable by a court or arbitration panel of competent jurisdiction, that provision shall be modified to the minimum extent necessary to make it valid and enforceable, or if it cannot be modified, it shall be deemed severed from this Agreement. The remaining provisions shall remain in full force and effect. 
+7.1. Severability (Safety Net Clause): If any provision of this Agreement is held to be invalid, illegal, or unenforceable by a court or arbitration panel of competent jurisdiction, that provision shall be modified to the minimum extent necessary to make it valid and enforceable, or if it cannot be modified, it shall be deemed severed from this Agreement. The remaining provisions shall remain in full force and effect.
 
-7.2. Integration: This Agreement, together with the Public Offer Agreement and the Privacy Policy, constitutes the entire agreement between the Administrator and the User. 
+7.2. Integration: This Agreement, together with the Public Offer Agreement and the Privacy Policy, constitutes the entire agreement between the Administrator and the User.
 
-7.3. Amendments: The Administrator reserves the right to unilaterally amend and modify this Agreement. Amendments shall become effective upon publication on the Website. Continued use of the Website signifies the User’s binding acceptance of the modified terms. 
+7.3. Amendments: The Administrator reserves the right to unilaterally amend and modify this Agreement. Amendments shall become effective upon publication on the Website. Continued use of the Website signifies the User’s binding acceptance of the modified terms.
 
 7.4. Contact Information:

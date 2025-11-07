@@ -10,7 +10,7 @@ Date of Publication: October 22, 2025
 
 1.3. Acceptor (User/Client): Any natural or legal person (individual or entity) who has performed the Acceptance of this Offer.
 
-1.4. Website: The online resource "Business Pathfinder Chronicles," located at <br> 
+1.4. Website: The online resource "Business Pathfinder Chronicles," located at <br>
 
 1.5. Services: Paid consulting services provided by the Offeror to the Acceptor in the format of an online video call (hereinafter referred to as the "Consultation").
 
@@ -109,6 +109,6 @@ The Offeror’s total aggregate liability to the Acceptor, whether in contract, 
 
 9.2. Amendment of the Offer and Notification. The Offeror reserves the right to unilaterally amend and modify this Offer, including the price of Services. Amendments shall become effective upon the expiry of seventy-two (72) hours from the date of their publication on the Website. Publication of the revised terms or a prominent disclaimer notice on the Website shall constitute sufficient and adequate notification (constructive notice) to the Acceptor. The Acceptor's continued use of the Website after the 72-hour period shall constitute acceptance of the modified terms.
 
-9.3. Offeror Contact Information:  
+9.3. Offeror Contact Information:
 
 9.4. Acknowledgment of Language and Understanding. The Acceptor confirms that by performing the Acceptance of this Offer and making payment for the Services, they are proficient in the English language (the official language of this Agreement as stipulated in Section 3.3) or have obtained a full and competent translation. Furthermore, the Acceptor confirms that they fully understand all the terms, conditions, disclaimers, and the 'AS IS' nature of the advisory Services being provided and is entering into this Agreement based on their own professional judgment and free will.

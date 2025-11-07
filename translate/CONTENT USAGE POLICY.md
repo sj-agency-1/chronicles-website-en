@@ -84,7 +84,7 @@ Apply to courts or authorised state bodies for the protection of their violated 
 
 7.1. Severability (Safety Net Clause): If any provision of this Policy is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, that provision shall be modified to the minimum extent necessary to make it valid and enforceable, or if it cannot be modified, it shall be deemed severed from this Policy. The remaining provisions shall remain in full force and effect.
 
-7.2. Contact Email: For all matters related to the use of Website materials, the enforcement of exclusive rights, and the request for permissions, please contact the Copyright Holder at:  
+7.2. Contact Email: For all matters related to the use of Website materials, the enforcement of exclusive rights, and the request for permissions, please contact the Copyright Holder at:
 
 7.3. Policy Amendments: The Copyright Holder reserves the right to unilaterally amend the terms of this Policy. Amendments shall become effective upon their publication on the Website.
 
