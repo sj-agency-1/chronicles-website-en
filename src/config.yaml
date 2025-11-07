@@ -1,6 +1,6 @@
 site:
-  name: Хроники Бизнес-Следопыта
-  site: 'https://business-pathfinder-chronicles.com'
+  name: Chronicles of The Business Pathfinder
+  site: 'https://business-pathfinder.com'
   base: '/'
   trailingSlash: false
 
@@ -29,22 +29,22 @@ donation:
   bankCardPaymentLink: 'https://pay.example.com/bank-card'
 
 formUrls:
-  consultationFormTestUrl: 'https://n8n.georgeparkdev.com/webhook-test/submit-consultation-request'
-  consultationFormUrl: 'https://n8n.georgeparkdev.com/webhook/submit-consultation-request'
-  vacancyFormTestUrl: 'https://n8n.georgeparkdev.com/webhook-test/submit-vacancy-request'
-  vacancyFormUrl: 'https://n8n.georgeparkdev.com/webhook/submit-vacancy-request'
+  consultationFormTestUrl: 'https://n8n.georgeparkdev.com/webhook-test/submit-consultation-request-en'
+  consultationFormUrl: 'https://n8n.georgeparkdev.com/webhook/submit-consultation-request-en'
+  vacancyFormTestUrl: 'https://n8n.georgeparkdev.com/webhook-test/submit-vacancy-request-en'
+  vacancyFormUrl: 'https://n8n.georgeparkdev.com/webhook/submit-vacancy-request-en'
 
 # Default SEO metadata
 metadata:
   title:
-    default: Хроники Бизнес-Следопыта
-    template: '%s — Хроники Бизнес-Следопыта'
-  description: 'Описание Сайта.'
+    default: Chronicles of The Business Pathfinder
+    template: '%s — Chronicles of The Business Pathfinder'
+  description: 'Description of the website.'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Хроники Бизнес-Следопыта
+    site_name: Chronicles of The Business Pathfinder
     images:
       - url: '~/assets/images/default.png'
         width: 1200
@@ -56,7 +56,7 @@ metadata:
     cardType: summary_large_image
 
 i18n:
-  language: ru
+  language: en
   textDirection: ltr
 
 apps:
