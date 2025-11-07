@@ -6,13 +6,13 @@ import Button from '~/components/common/Button.astro';
 import CopyText from '~/components/common/CopyText.astro';
 
 const metadata = {
-  title: 'Донат — Поддержка проекта',
+  title: 'Donation — Supporting the Project',
   ignoreTitleTemplate: false,
 };
 
 const breadCrumbLinks = [
-  { text: 'Главная', href: '/' },
-  { text: 'Донат', href: '/donate' },
+  { text: 'Home', href: '/' },
+  { text: 'Donation', href: '/donate' },
 ];
 
 const cryptoLink = DONATION['cryptoPaymentLink'] || 'https://www.example.com/crypto-donate';
@@ -24,44 +24,47 @@ const bankLink = DONATION['bankCardPaymentLink'] || 'https://www.example.com/ban
   {metadata}
   heroItems={[
     {
-      title: 'Поддержка проекта',
+      title: 'Supporting the Project',
       bgImage: '~/assets/images/pages/donation.webp',
     },
   ]}
 >
   <Content>
-    <h1>Поддержка проекта «Хроники Бизнес-Следопыта»</h1>
-    <h2>Благодарность Автора</h2>
+    <h1>Supporting the “Business Pathfinder Chronicles” Project</h1>
+    <h2>Author’s Gratitude</h2>
     <p>
-      Дорогой друг! Большое спасибо за то, что вы цените мою работу, материалы и время, потраченное на развитие проекта
-      «Хроники Бизнес-Следопыта». Ваше желание поддержать проект — лучшая награда для меня, Сергея Вячеславовича П. Ваша
-      финансовая помощь не просто донат, это прямое инвестирование в создание нового, качественного и глубокого
-      контента.
+      Dear Friend,<br />
+      Thank you very much for valuing my work, materials, and the time spent developing the “Business Pathfinder
+      Chronicles” project. Your willingness to support the project is the best reward for me, Sergey V. P.
+      Your financial assistance is not merely a donation; it is a direct investment in the creation of new,
+      high-quality, and in-depth content.
     </p>
 
-    <h2>🛑 Важное юридическое уведомление</h2>
+    <h2>🛑 Important Legal Notice</h2>
     <p>
-      Ваш платеж, совершенный на этой странице, является <strong
-        >добровольным, безвозмездным пожертвованием (даром)</strong
-      > в пользу Администрации Сайта (Сергея Вячеславовича П.) на развитие проекта.
+      Your payment made on this page constitutes a
+      <strong>voluntary, gratuitous donation (gift)</strong> in favor of the Site Administration
+      (Sergey V. P.) for the development of the project.
     </p>
     <p>
-      Совершая платеж, вы подтверждаете, что пожертвование не является оплатой за какой-либо товар, услугу или иной
-      встречный эквивалент. В соответствии с <strong>Договором публичной оферты</strong>
-      (раздел 7), донат <strong>не подлежит возврату</strong>, за исключением случаев технической ошибки платежной
-      системы. Совершая перевод, вы подтверждаете осознанность и добровольность своего решения.
+      By making a payment, you confirm that this donation is not payment for any product, service, or other
+      reciprocal equivalent. In accordance with the <strong>Public Offer Agreement</strong> (Section 7),
+      the donation is <strong>non-refundable</strong>, except in cases of technical error by the payment system.
+      By transferring funds, you confirm that your intent to donate is voluntary and informed.
     </p>
 
-    <h2>Как сделать пожертвование</h2>
-    <p>Приоритетным способом поддержки является оплата криптовалютой.</p>
+    <h2>How to Make a Donation</h2>
+    <p>
+      We value your anonymity and security, which is why the preferred method of support is payment via cryptocurrency.
+    </p>
 
-    <h3>1. Криптовалюта (приоритетный способ)</h3>
+    <h3>1. Cryptocurrency (Preferred Method)</h3>
     <table class="table-auto border-collapse border border-gray-400 mt-4 mb-6">
       <thead>
         <tr class="bg-gray-100">
-          <th class="border border-gray-400 px-4 py-2">Валюта</th>
-          <th class="border border-gray-400 px-4 py-2">Сеть</th>
-          <th class="border border-gray-400 px-4 py-2">Адрес кошелька</th>
+          <th class="border border-gray-400 px-4 py-2">Currency</th>
+          <th class="border border-gray-400 px-4 py-2">Network</th>
+          <th class="border border-gray-400 px-4 py-2">Wallet Address (Public Key)</th>
         </tr>
       </thead>
       <tbody>
@@ -89,26 +92,28 @@ const bankLink = DONATION['bankCardPaymentLink'] || 'https://www.example.com/ban
       </tbody>
     </table>
 
-    <h4>Инструкция по донату</h4>
+    <h4>Donation Instructions</h4>
     <ol class="list-decimal list-inside mb-6">
-      <li>Скопируйте адрес нужного кошелька выше.</li>
-      <li>Откройте свой криптокошелек или биржу.</li>
-      <li>Убедитесь, что выбрана правильная сеть.</li>
-      <li>Укажите сумму и подтвердите транзакцию.</li>
+      <li>Copy the corresponding wallet address listed above.</li>
+      <li>Open your cryptocurrency wallet or exchange account.</li>
+      <li>Ensure you have selected the correct network.</li>
+      <li>Specify the amount and confirm the transaction.</li>
     </ol>
 
-    <h3>2. Традиционные методы (PayPal / СБП / другое)</h3>
-    <p>Если вы предпочитаете использовать традиционные методы, воспользуйтесь ссылкой ниже.</p>
+    <h3>2. Traditional Methods (PayPal / Other)</h3>
+    <p>If you prefer to use traditional payment methods, please use the link below.</p>
     <div class="flex flex-col sm:flex-row gap-4 mt-4">
-      <Button href={bankLink} text="Оплатить банковской картой" target="_blank" variant="primary" type="link" />
-      <Button href={cryptoLink} text="Оплатить криптовалютой" target="_blank" variant="primary" type="link" />
+      <Button href={bankLink} text="Pay by Bank Card" target="_blank" variant="primary" type="link" />
+      <Button href={cryptoLink} text="Pay with Cryptocurrency" target="_blank" variant="primary" type="link" />
     </div>
 
     <p class="mt-8">
-      Еще раз огромное спасибо за вашу поддержку! Ваш вклад помогает «Хроникам Бизнес-Следопыта» расти и делиться
-      уникальным опытом с тысячами читателей.
+      Once again, thank you very much for your support! Your contribution helps the “Business Pathfinder Chronicles”
+      grow and share unique experience with thousands of readers.
     </p>
 
-    <p class="mt-6 font-semibold">С уважением,<br />Сергей Вячеславович П.<br />Автор и Администратор проекта</p>
+    <p class="mt-6 font-semibold">
+      Sincerely,<br />Sergey V. P.<br />Author and Administrator of the Project
+    </p>
   </Content>
 </PageLayout>

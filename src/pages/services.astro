@@ -4,12 +4,12 @@ import Accordion from '~/components/structures/Accordion.astro';
 import PageLayout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'Мои Услуги',
+  title: 'My Services',
   ignoreTitleTemplate: true,
 };
 const breadCrumbLinks = [
-  { text: 'Главная', href: '/' },
-  { text: 'Мои Услуги', href: '/services' },
+  { text: 'Home', href: '/' },
+  { text: 'My Services', href: '/services' },
 ];
 ---
 
@@ -18,225 +18,226 @@ const breadCrumbLinks = [
   {metadata}
   heroItems={[
     {
-      title: 'Мои Услуги',
+      title: 'My Services',
       bgImage: '~/assets/images/pages/my-services.webp',
     },
   ]}
 >
   <Content class="services-page-content">
-    <h1>Стратегический бизнес-консалтинг от Бизнес-Следопыта</h1>
+    <h1>Strategic Business Consulting from The Business Pathfinder</h1>
     <p>
-      В условиях высокой волатильности рынка точечные улучшения недостаточны для прорывного роста. Требуется глубокое
-      переосмысление бизнес-модели, операционной деятельности и стратегических ориентиров. Мои услуги нацелены на
-      решение комплексных задач, где ставка — это устойчивость, масштабируемость и капитализация вашего бизнеса
+      In conditions of high market volatility, targeted improvements are insufficient for breakthrough growth.
+      A deep rethinking of your business model, operational activities, and strategic focus is required.
+      My services are aimed at solving complex challenges where the stake is the sustainability, scalability,
+      and capitalization of your business.
     </p>
+    <p><b>Principles of Cooperation:</b></p>
     <p>
-      <b>Принципы сотрудничества:</b>
+      All services are rendered upon 100% upfront payment.
+      I reserve the right to unilaterally refuse to provide a service if the project does not align with my expertise or resources.
+      In such a situation, the Client will receive a full refund of the payment amount, with no penalties or fees applied.
     </p>
-    <p>
-      Все услуги оказываются на условиях 100% предоплаты. Я оставляю за собой право отказаться от оказания услуги в
-      одностороннем порядке в случае несоответствия проекта моей экспертизе или ресурсам. В такой ситуации Заказчику
-      возвращается полная сумма оплаты без начисления каких-либо неустоек
-    </p>
+
     <Accordion
       isOpen={false}
-      title="1. ЭКСПРЕСС-ДИАГНОСТИКА И СТРАТЕГИЧЕСКИЕ СЕССИИ / КОНСУЛЬТАЦИИ"
-      excerpt="Формат для принятия ключевых решений «здесь и сейчас». Глубокая предварительная аналитика ваших материалов позволяет в сжатые сроки провести сессию, сфокусированную исключительно на решении вашей задачи"
+      title="1. EXPRESS DIAGNOSTICS AND STRATEGIC SESSIONS / CONSULTING"
+      excerpt="This format is for making key decisions 'here and now.' Deep preliminary analysis of your materials allows for a focused session dedicated exclusively to solving your specific task."
     >
-      <Accordion title="1.1. Стратегическая онлайн-сессия">
-        <h4>Формат</h4>
-        <p>Углубленная онлайн-консультация продолжительностью до 120 минут</p>
-        <h4>Стоимость</h4>
-        <p>200 USD</p>
-        <h4>Процесс</h4>
+      <Accordion title="1.1. Strategic Online Session">
+        <h4>Format</h4>
+        <p>In-depth online consultation lasting up to 120 minutes.</p>
+        <h4>Fee</h4>
+        <p>800 USD</p>
+        <h4>Process</h4>
         <ul>
           <li>
-            <b>Оплата и предоставление данных:</b> После оплаты вы получаете детальный бриф и предоставляете необходимую
-            информацию (отчетность, аудиторские заключения, презентации и т.д.).
+            <b>Payment and Data Submission:</b> After payment, you receive a detailed brief and provide necessary information
+            (reports, audit findings, presentations, etc.).
           </li>
-          <li><b>Погружение:</b> В течение 3-5 рабочих дней я провожу анализ предоставленных материалов.</li>
-          <li><b>Сессия:</b> Проводим голосовой созвон на выбранной платформе (Zoom, Teams, Telegram и пр.).</li>
+          <li><b>Immersion:</b> I conduct an analysis of the provided materials within 3–5 business days.</li>
+          <li><b>Session:</b> We hold a voice call on the selected platform (Zoom, Teams, Telegram, etc.).</li>
           <li>
-            <b>Итоговый документ:</b> В течение 3-5 дней после сессии вы получаете Meeting Report — структурированный отчет
-            с анализом, выводами и конкретными рекомендациями.
+            <b>Final Deliverable:</b> Within 3–5 days after the session, you receive a Meeting Report—a structured document
+            with analysis, conclusions, and specific recommendations.
           </li>
         </ul>
-        <b>*Правовое поле:</b> Отношения регулируются договором-офертой.
+        <b>*Legal Framework:</b> Relationship governed by a Public Offer Agreement.
       </Accordion>
-      <Accordion title="1.2. Индивидуальная стратегическая сессия">
-        <h4>Формат</h4>
-        <p>Личная встреча продолжительностью до 4 часов</p>
-        <h4>Стоимость</h4>
-        <p>1 000 USD</p>
-        <h4>Процесс</h4>
+
+      <Accordion title="1.2. Individual Strategic Session">
+        <h4>Format</h4>
+        <p>Personal meeting lasting up to 4 hours.</p>
+        <h4>Fee</h4>
+        <p>2,500 USD</p>
+        <h4>Process</h4>
         <ul>
           <li>
-            <b>Согласование и договор:</b> Согласовываем дату, время и место встречи (в стране и городе моего пребывания).
-            Заключаем договор, обмениваясь подписанными сканами.
+            <b>Agreement and Contract:</b> We agree on the date, time, and location of the meeting (in the country and city of my current stay).
+            We execute the agreement by exchanging signed scans.
           </li>
           <li>
-            <b>Оплата и погружение:</b> После оплаты вы предоставляете заполненный бриф и документы. Я провожу предварительный
-            анализ в течение 3-5 дней.
+            <b>Payment and Immersion:</b> After payment, you provide the completed brief and documents.
+            I conduct a preliminary analysis within 3–5 days.
           </li>
-          <li><b>Сессия:</b> Проводим интенсивную рабочую встречу.</li>
+          <li><b>Session:</b> We hold an intensive working meeting.</li>
           <li>
-            <b>Итоговый документ:</b> В течение 3-5 дней вы получаете Comprehensive Strategy Memo — развернутый отчет с дорожной
-            картой первоочередных действий.
+            <b>Final Deliverable:</b> Within 3–5 days, you receive a Comprehensive Strategy Memo—a detailed report
+            with an action roadmap for immediate priorities.
           </li>
         </ul>
-        <b>*Правовое поле:</b> Заключается полноценный договор оказания услуг.
+        <b>*Legal Framework:</b> Governed by a full Service Agreement.
       </Accordion>
-      <Accordion title="1.3. Сессия с экспертной выездной поддержкой">
-        <h4>Формат</h4>
+
+      <Accordion title="1.3. Session with Expert On-Site Support">
+        <h4>Format</h4>
         <p>
-          Личная встреча с выездом в вашу локацию. Минимальная продолжительность проекта — 2 суток с учетом перелета
+          Personal meeting with travel to your location. Minimum project duration is 2 days, including travel time.
         </p>
-        <h4>Стоимость</h4>
-        <p>2 000 USD / сутки + райдер (авиаперелет бизнес-класс, размещение в отеле категории 5*)</p>
-        <h4>Процесс</h4>
+        <h4>Fee</h4>
+        <p>6,000 USD per day + Travel & Logistics Requirements (Business Class Airfare, 5-Star Hotel Accommodation).</p>
+        <h4>Process</h4>
         <ul>
+          <li><b>Terms Agreement:</b> We agree on dates, location, visit agenda, and travel requirements.</li>
+          <li><b>Contract:</b> We execute the agreement by exchanging signed scans.</li>
+          <li><b>Payment and Immersion:</b> After payment, you provide the document package for deep project immersion.</li>
+          <li><b>On-Site Work:</b> I conduct meetings, inspections, and strategic sessions with your team.</li>
           <li>
-            <b>Согласование условий:</b> Согласовываем даты, место, программу визита и условия райдера.
-          </li>
-          <li><b>Договор:</b> Заключаем договор, обмениваясь подписанными сканами.</li>
-          <li>
-            <b>Оплата и погружение:</b> После оплаты вы предоставляете пакет документов для моего глубокого погружения.
-          </li>
-          <li><b>Работа на месте:</b> Провожу встречи, инспекции, стратегические сессии с вашей командой.</li>
-          <li>
-            <b>Итоговый документ:</b> В течение 3-5 дней после визита вы получаете Executive Mission Report — детальный отчет
-            с выводами и персональными рекомендациями.
+            <b>Final Deliverable:</b> Within 3–5 days after the visit, you receive an Executive Mission Report—
+            a detailed report with conclusions and personalized recommendations.
           </li>
         </ul>
-        <b>*Правовое поле:</b> Заключается полноценный договор оказания услуг.
+        <b>*Legal Framework:</b> Governed by a full Service Agreement.
       </Accordion>
     </Accordion>
 
     <Accordion
       isOpen={false}
-      title="2. КОМПЛЕКСНЫЙ ОТРАСЛЕВОЙ АУДИТ"
-      excerpt="Не система слепа, а у вас нет независимого взгляда со стороны. Мои аудиторские услуги — это не проверка «галочек», а сканирование бизнеса на предмет скрытых рисков и нереализованных возможностей"
+      title="2. COMPREHENSIVE INDUSTRY AUDIT"
+      excerpt="It's not that the system is blind, but that you lack an independent, external view. My audit services are not about checking boxes, but about scanning your business for hidden risks and unrealized opportunities."
     >
-      <h4>Базовые форматы проведения аудита:</h4>
-      <Accordion title="Дистанционный аудит:">
+      <h4>Basic Audit Formats:</h4>
+      <Accordion title="Remote Audit:">
         <p>
-          Стоимость от 1 000 USD. Срок выполнения — до 14 рабочих дней. Включает итоговый отчет и опциональную
-          онлайн-консультацию по его результатам. Регулируется договором-офертой.
+          Fee starting from 8,000 USD. Completion time—up to 14 business days.
+          Includes a final report and an optional online consultation on its results.
+          Regulated by a Public Offer Agreement.
         </p>
       </Accordion>
-      <Accordion title="Выездной аудит на объект:">
+      <Accordion title="On-Site Audit:">
         <p>
-          Стоимость от 3 000 USD + райдер. Продолжительность — до 3 суток с учетом перелета. Регулируется полноценным
-          договором оказания услуг.
+          Fee starting from 25,000 USD + Travel & Logistics Requirements.
+          Duration—up to 3 days including travel.
+          Regulated by a full Service Agreement.
         </p>
       </Accordion>
 
-      <h4>Специализация аудиторских проверок:</h4>
-      <Accordion title="Производственный аудит:">
+      <h4>Specialized Audit Areas (Goals):</h4>
+      <Accordion title="Manufacturing Audit:">
         <p>
-          Анализ производственных процессов, оборудования, себестоимости и технологий. Цель: оптимизация издержек и
-          повышение производительности.
+          Analysis of production processes, equipment, COGS, and technology.
+          Goal: Cost optimization and increased productivity.
         </p>
       </Accordion>
-      <Accordion title="Операционный аудит:">
+      <Accordion title="Operations Audit:">
         <p>
-          Диагностика бизнес-процессов, внутренних регламентов и документооборота. Цель: повышение операционной
-          эффективности и снижение транзакционных затрат.
+          Diagnostics of business processes, internal regulations, and document flow.
+          Goal: Increased operational efficiency and reduced transaction costs.
         </p>
       </Accordion>
-      <Accordion title="Маркетинговый аудит:">
+      <Accordion title="Marketing Audit:">
         <p>
-          Глубокое исследование рынка, ниши, позиционирования и маркетинговой стратегии. Цель: выявление слабых мест,
-          определение точек роста и повышение ROI маркетинга.
+          In-depth research of the market, niche, positioning, and marketing strategy.
+          Goal: Identification of weaknesses, growth areas, and improved Marketing ROI.
         </p>
       </Accordion>
-      <Accordion title="Рекламный и Digital-аудит:">
+      <Accordion title="Advertising and Digital Audit:">
         <p>
-          Анализ рекламных кампаний, воронок, KPI и креативных материалов. Цель: идентификация неэффективных каналов,
-          уточнение портрета ЦА и повышение конверсии.
+          Analysis of advertising campaigns, funnels, KPIs, and creative materials.
+          Goal: Identification of ineffective channels, clarification of Target Audience profile,
+          and increased conversion rates.
         </p>
       </Accordion>
-      <Accordion title="Коммерческий аудит:">
+      <Accordion title="Commercial Audit:">
         <p>
-          Оценка CRM-системы, воронки продаж, скриптов, показателей отдела продаж. Цель: рост доходности, выручки и
-          оптимизация коммерческих процессов.
+          Evaluation of the CRM system, sales funnel, scripts, and sales department metrics.
+          Goal: Growth in profitability, revenue, and optimization of commercial processes.
         </p>
       </Accordion>
-      <Accordion title="Логистический аудит:">
+      <Accordion title="Logistics Audit:">
         <p>
-          Аудит полного цикла: закупки, складская логистика, транспортировка, управление цепочками поставок. Цель:
-          сокращение логистических издержек и повышение оборачиваемости.
+          Audit of the full cycle: procurement, warehouse logistics, transportation,
+          and supply chain management. Goal: Reduction of logistics costs and increased turnover.
         </p>
       </Accordion>
-      <Accordion title="HR-аудит:">
+      <Accordion title="HR Audit:">
         <p>
-          Анализ систем управления персоналом, мотивации, KPI и кадрового документооборота. Цель: повышение
-          продуктивности персонала и снижение текучки кадров.
+          Analysis of personnel management systems, motivation, KPIs, and HR documentation flow.
+          Goal: Increased employee productivity and reduced staff turnover.
         </p>
       </Accordion>
-      <Accordion title="IT-аудит:">
+      <Accordion title="IT Audit:">
         <p>
-          Оценка IT-инфраструктуры, систем, кибербезопасности, лицензий и пользовательского опыта (UI/UX). Цель:
-          обеспечение устойчивости, безопасности и эффективности IT-среды.
+          Evaluation of IT infrastructure, systems, cybersecurity, licenses, and User Experience (UI/UX).
+          Goal: Ensuring stability, security, and efficiency of the IT environment.
         </p>
       </Accordion>
-      <Accordion title="Финансовый аудит:">
+      <Accordion title="Financial Audit:">
         <p>
-          Проверка финансовой отчетности, бухгалтерского учета и движения денежных средств. Цель: подтверждение
-          достоверности отчетности, выявление финансовых утечек и оптимизация денежных потоков.
+          Verification of financial statements, accounting, and cash flow.
+          Goal: Confirmation of report reliability, identification of financial leaks,
+          and optimization of cash flows.
         </p>
       </Accordion>
-      <Accordion title="Юридический аудит:">
+      <Accordion title="Legal Audit:">
         <p>
-          Анализ договоров, уставных документов, корпоративной структуры и судебных рисков. Цель: оценка правовой
-          чистоты бизнеса и минимизация юридических рисков.
+          Analysis of contracts, constitutional documents, corporate structure, and litigation risks.
+          Goal: Assessment of the legal integrity of the business and minimization of legal risks.
         </p>
       </Accordion>
-      <Accordion title="Инвестиционный аудит (Due Diligence Lite):">
+      <Accordion title="Investment Audit (Due Diligence Lite):">
         <p>
-          Комплексная оценка финансов, юридических рисков и бизнес-потенциала компании. Цель: предоставление инвестору
-          или покупателю независимой экспертной оценки активов.
+          Comprehensive assessment of company finances, legal risks, and business potential.
+          Goal: Providing the investor or buyer with an independent expert assessment of assets.
         </p>
       </Accordion>
     </Accordion>
 
     <Accordion
       isOpen={false}
-      title="3. ПРОЕКТЫ АНТИКРИЗИСНОГО УПРАВЛЕНИЯ (CRISIS MANAGEMENT)"
-      excerpt="Когда время на принятие решений ограничено, а цена ошибки катастрофически высока, требуется не консультант, а руководитель специального назначения"
+      title="3. CRISIS MANAGEMENT PROJECTS"
+      excerpt="When decision-making time is limited and the cost of error is catastrophically high, you need not a consultant, but an Executive Officer for Special Purposes."
     >
-      <h4>Формат</h4>
-      <p>Гибридный (удаленное управление с периодическими выездными командировками)</p>
-      <h4>Стоимость</h4>
-      <p>от 8 000 USD / месяц + райдер. Минимальный срок проекта — 3 месяца</p>
-      <h4>Описание</h4>
+      <h4>Format</h4>
+      <p>Hybrid (remote management with periodic on-site travel).</p>
+      <h4>Fee</h4>
+      <p>Starting from 50,000 USD per month + Travel & Logistics Requirements. Minimum project duration is 3 months.</p>
+      <h4>Description</h4>
       <p>
-        Полный цикл антикризисного управления. На период проекта я принимаю на себя оперативное руководство и
-        координацию ключевых процессов. В стоимость входит привлечение и управление узкопрофильными специалистами
-        (юристы, финансисты, PR-эксперты), необходимых для стабилизации ситуации. Решения принимаются быстро и
-        авторитарно
+        Full cycle of anti-crisis management. During the project period, I assume operational leadership and coordination
+        of key processes. The fee includes the engagement and management of specialized experts (lawyers, financiers,
+        PR experts) necessary to stabilize the situation. Decisions are made quickly and authoritatively.
       </p>
-      <h4>Правовое поле</h4>
-      <p>Регулируется комплексным договором оказания услуг</p>
+      <h4>Legal Framework</h4>
+      <p>Regulated by a full Service Agreement.</p>
     </Accordion>
 
     <Accordion
       isOpen={false}
-      title="4. ПЕРСОНАЛЬНОЕ МЕНТОРСТВО И СТРАТЕГИЧЕСКОЕ СОПРОВОЖДЕНИЕ"
-      excerpt="Стратегия без реализации — это философия. Данная услуга — это партнерство, где я становлюсь вашим внешним членом совета директоров, обеспечивая трансформацию идей в измеримый результат"
+      title="4. PERSONAL MENTORING AND STRATEGIC SUPPORT"
+      excerpt="Strategy without execution is just philosophy. This service is a partnership where I become your external board member, ensuring the transformation of ideas into measurable results."
     >
-      <h4>Формат</h4>
-      <p>Преимущественно онлайн, с опциональными выездными сессиями по согласованию</p>
-      <h4>Стоимость</h4>
-      <p>от 5 000 USD / месяц. Минимальный срок сотрудничества — 3 месяца</p>
-      <h4>Описание</h4>
+      <h4>Format</h4>
+      <p>Predominantly online, with optional on-site sessions by mutual agreement.</p>
+      <h4>Fee</h4>
+      <p>Starting from 10,000 USD per month. Minimum engagement term is 3 months.</p>
+      <h4>Description</h4>
       <p>
-        Полный цикл сопровождения вашего бизнеса или личного бренда. В рамках услуги: регулярные стратегические сессии,
-        детализированные рекомендации, контроль исполнения принятых решений вашей командой, корректировка курса в режиме
-        реального времени. Это инвестиция в ускорение роста и минимизацию стратегических ошибок
+        Full cycle of support for your business or personal brand. Within the scope of the service:
+        regular strategic sessions, detailed recommendations, control over the execution of decisions by your team,
+        and course correction in real time. This is an investment in accelerated growth and minimization of strategic errors.
       </p>
-      <h4>Правовое поле</h4>
-      <p>Регулируется комплексным договором оказания услуг</p>
+      <h4>Legal Framework</h4>
+      <p>Regulated by a full Service Agreement.</p>
     </Accordion>
   </Content>
 </PageLayout>

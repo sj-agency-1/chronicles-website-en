@@ -28,7 +28,7 @@ interface Props {
 const { frontmatter, url } = Astro.props as Props;
 
 const breadCrumbLinks: Array<BreadCrumbLink> = [
-  { text: 'Главная', href: '/' },
+  { text: 'Home', href: '/' },
   { text: String(frontmatter.title), href: url },
 ];
 ---

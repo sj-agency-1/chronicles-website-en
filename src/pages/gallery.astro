@@ -6,12 +6,12 @@ import Modal from '~/components/common/Modal.astro';
 import Button from '~/components/common/Button.astro';
 
 const metadata = {
-  title: 'Галерея',
+  title: 'Gallery',
   ignoreTitleTemplate: true,
 };
 const breadCrumbLinks = [
-  { text: 'Главная', href: '/' },
-  { text: 'Галерея', href: '/gallery' },
+  { text: 'Home', href: '/' },
+  { text: 'Gallery', href: '/gallery' },
 ];
 
 const galleryItems: GalleryItemProps[] = [
@@ -29,7 +29,7 @@ const galleryItems: GalleryItemProps[] = [
   {metadata}
   heroItems={[
     {
-      title: 'Фотогалерея',
+      title: 'Gallery',
       bgImage: '~/assets/images/pages/gallery.webp',
     },
   ]}
@@ -38,16 +38,16 @@ const galleryItems: GalleryItemProps[] = [
     <GalleryGrid items={galleryItems} />
   </section>
 
-  <Modal id="access-modal" title="Нет доступа">
+  <Modal id="access-modal" title="No access">
     <p class="text-black">
-      Этот материал только для избранных следопытов. Зарегистрируйтесь и запросите доступ у администратора
+      This material is for selected scouts only. Please register and request access from the administrator.
     </p>
     <div class="flex flex-col gap-3 mt-2">
-      <Button type="link" variant="primary" text="Зарегистрироваться" href="#" size="medium" />
+      <Button type="link" variant="primary" text="Register" href="#" size="medium" />
       <Button
         type="link"
         variant="outlined"
-        text="Запросить доступ"
+        text="Request Access"
         href="#"
         size="medium"
         class="flex justify-center"

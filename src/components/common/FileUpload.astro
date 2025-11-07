@@ -39,7 +39,7 @@ const {
     <div class="flex flex-col items-center justify-center text-center gap-2.5">
       <p>{centerText}</p>
       <Button
-        text="Загрузить файл"
+        text="Upload File"
         variant="primary"
         type="button"
         buttonType="button"
@@ -98,14 +98,14 @@ const {
     const allowedTypes = accept.split(',');
     const fileExtension = '.' + file.name.split('.').pop().toLowerCase();
     if (!allowedTypes.includes(fileExtension)) {
-      showError('Неверный формат файла. Пожалуйста, прикрепите PDF или DOCX файл.');
+      showError('Invalid file format. Please attach a PDF or DOCX file.');
       input.value = '';
       return;
     }
 
     // Check file size
     if (file.size > maxSize) {
-      showError('Максимальный размер файла 5MB.');
+      showError('Maximum file size is 5MB.');
       input.value = '';
       return;
     }

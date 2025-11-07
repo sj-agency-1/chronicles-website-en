@@ -3,12 +3,12 @@ import PageLayout from '~/layouts/PageLayout.astro';
 import ContactList from '~/components/structures/ContactList.astro';
 
 const metadata = {
-  title: 'Контакты',
+  title: 'Contacts',
   ignoreTitleTemplate: true,
 };
 const breadCrumbLinks = [
-  { text: 'Главная', href: '/' },
-  { text: 'Контакты', href: '/contacts' },
+  { text: 'Home', href: '/' },
+  { text: 'Contacts', href: '/contacts' },
 ];
 ---
 
@@ -17,7 +17,7 @@ const breadCrumbLinks = [
   {metadata}
   heroItems={[
     {
-      title: 'Контакты',
+      title: 'Contacts',
       bgImage: '~/assets/images/pages/contacts.webp',
     },
   ]}

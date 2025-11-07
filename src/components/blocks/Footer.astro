@@ -10,65 +10,65 @@ interface Link {
 
 const contentPolicy: Link = {
   href: '/content-policy',
-  text: 'Политике использования контента',
+  text: 'Content Usage Policy',
 };
 const sitemap: Link = {
   href: '/sitemap-index.xml',
-  text: 'Карта сайта',
+  text: 'Sitemap',
 };
 
 const footerCenterLinks: Array<Link> = [
   {
     href: '/',
-    text: 'Главная',
+    text: 'Home',
   },
   {
     href: '/about',
-    text: 'Обо мне',
+    text: 'About Me',
   },
   {
     href: '/skills',
-    text: 'Мои навыки',
+    text: 'My Skills',
   },
   {
     href: '/services',
-    text: 'Мои услуги',
+    text: 'My Services',
   },
   {
     href: '/gallery',
-    text: 'Фотогалерея',
+    text: 'Gallery',
   },
   {
     href: '/contacts',
-    text: 'Контакты',
+    text: 'Contacts',
   },
   {
     href: '/blog',
-    text: 'Познавательно',
+    text: 'Blog',
   },
   {
     href: '/donate',
-    text: 'Донат',
+    text: 'Donate',
   },
   {
     href: '/vacancies',
-    text: 'Вакансии',
+    text: 'Vacancies',
   },
   {
     href: '/user-agreement',
-    text: 'Пользовательское соглашение',
+    text: 'User Agreement',
   },
   {
     href: '/privacy-policy',
-    text: 'Политика конфиденциальности',
+    text: 'Privacy Policy',
   },
   {
     href: '/content-policy',
-    text: 'Политика использования контента',
+    text: 'Content Usage Policy',
   },
   {
     href: '/offer-agreement',
-    text: 'Договор оферты',
+    text: 'Public Offer Agreement',
   },
 ];
 
@@ -83,11 +83,11 @@ const footerRightLinks: Array<Link> = [
   },
   {
     href: getSkillLink(SkillType.MarketingAndAdv),
-    text: 'Маркетинг',
+    text: 'Marketing',
   },
   {
     href: getSkillLink(SkillType.InternetMarketing),
-    text: 'Digita-Маркетинг',
+    text: 'Digital Marketing',
   },
   {
     href: getSkillLink(SkillType.BusinessDevelopment),
@@ -103,19 +103,19 @@ const footerRightLinks: Array<Link> = [
   },
   {
     href: getSkillLink(SkillType.BusinessCommunicationAndMediation),
-    text: 'Медиация',
+    text: 'Mediation',
   },
   {
     href: '/blog/business-psychology',
-    text: 'Бизнес-Психология',
+    text: 'Business Psychology',
   },
   {
     href: '/project/architect-of-personal-brands',
-    text: 'Личный бренд',
+    text: 'Personal Brand',
   },
   {
-    href: '/project/404-life-not-found',
-    text: 'Дубай. Новая эра',
+    href: '/blog/404-life-not-found',
+    text: 'Dubai. New Era',
   },
 ];
 ---
@@ -126,10 +126,10 @@ const footerRightLinks: Array<Link> = [
       <div class="flex flex-col gap-10 justify-start items-center text-center md:items-start md:text-left">
         <Logo variant="dark" />
         <FooterSocials />
-        <p class="text-white text-sm">&copy; Автор Сергей Вячеславович П., Бизнес-Следопыт</p>
+        <p class="text-white text-sm">&copy; Author Sergey Vyacheslavovich P., Business Pathfinder</p>
         <p class="text-white text-sm">
-          Все материалы на сайте защищены авторским правом. Копирование и использование контента без письменного
-          разрешения автора строго запрещено. Подробнее в <a href={contentPolicy.href} rel="noopener noreferrer"
+          All materials on this website are protected by copyright. Copying and use of content without the author's written
+          permission is strictly prohibited. For more details, see <a href={contentPolicy.href} rel="noopener noreferrer"
             >{contentPolicy.text}</a
           >
         </p>

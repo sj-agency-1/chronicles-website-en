@@ -7,11 +7,11 @@ import FileUpload from '~/components/common/FileUpload.astro';
 import Button from '../common/Button.astro';
 
 const vacancies = [
-  'Финансовый аудитор',
-  'Юрист по корпоративному праву',
-  'Юрист по защите интеллектуальных прав',
-  'Патентный проверенный',
-  'Онлайн ассистент (консультант)',
+  'Financial Auditor',
+  'Corporate Law Lawyer',
+  'Intellectual Property Lawyer',
+  'Certified Patent Attorney',
+  'Online Assistant (Consultant)',
 ];
 
 let vacancySubmitUrl = FORMS_URLS.vacancyFormTestUrl;
@@ -21,27 +21,27 @@ if (import.meta.env.PROD) {
 ---
 
 <form id="vacancies-form" method="post" action={vacancySubmitUrl} class="grid grid-cols-1 md:grid-cols-2 gap-4">
-  <Input name="vacancies-form__name" label="Ваше ФИО" placeholder="Введите ваше ФИО" required />
+  <Input name="vacancies-form__name" label="Your Full Name" placeholder="Enter your full name" required />
   <Input
     name="vacancies-form__whatsapp"
-    label="Номер WhatsApp"
-    placeholder="+7XXXXXXXXXX"
+    label="WhatsApp Number"
+    placeholder="+1XXXXXXXXXX"
     type="tel"
     pattern="^\+\d+$"
     required
   />
-  <Input name="vacancies-form__email" label="Email" placeholder="Введите ваш Email" type="email" required />
+  <Input name="vacancies-form__email" label="Email" placeholder="Enter your email" type="email" required />
   <Select
     name="vacancies-form__vacancy"
-    label="Вакансия"
-    placeholder="Выберите вакансию из списка"
+    label="Vacancy"
+    placeholder="Select a vacancy from the list"
     options={vacancies}
     required
   />
-  <Textarea name="vacancies-form__about" label="Немного о себе" placeholder="Напишите что-нибудь о себе" />
+  <Textarea name="vacancies-form__about" label="About Yourself" placeholder="Write something about yourself" />
   <FileUpload
     name="vacancies-form__resume"
-    centerText="Загрузите ваше резюме"
+    centerText="Upload your resume"
     accept=".pdf,.docx"
     maxSize={5 * 1024 * 1024}
   />
@@ -51,7 +51,7 @@ if (import.meta.env.PROD) {
   <Button
     id="vacancies-form__submit-button"
     class="col-span-1 md:col-span-2 max-w-fit"
-    text="Отправить"
+    text="Submit"
     variant="primary"
     size="small"
     type="button"
@@ -123,7 +123,7 @@ if (import.meta.env.PROD) {
     } catch (error: unknown) {
       // Show error message
       console.error('Form submission error:', error);
-      showMessage('Произошла ошибка при отправке формы. Пожалуйста, попробуйте снова.', true);
+      showMessage('Form submission failed. Please try again.', true);
     } finally {
       // Re-enable submit button
       submitButton.disabled = false;

@@ -13,7 +13,7 @@ const { page } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;
 
 const metadata = {
-  title: 'Познавательно',
+  title: 'Blog',
   ignoreTitleTemplate: true,
   robots: {
     index: blogListRobots?.index && currentPage === 1,
@@ -24,8 +24,8 @@ const metadata = {
   },
 };
 const breadCrumbLinks = [
-  { text: 'Главная', href: '/' },
-  { text: 'Познавательно', href: '/blog' },
+  { text: 'Home', href: '/' },
+  { text: 'Blog', href: '/blog' },
 ];
 
 // Load posts
@@ -38,19 +38,19 @@ const posts = await findLatestPosts({ count: 10 });
   {metadata}
   heroItems={[
     {
-      title: 'Познавательно',
+      title: 'Blog',
       bgImage: '~/assets/images/pages/informative.webp',
     },
   ]}
 >
   <Posts
-    title="Познавательно"
+    title="Blog"
     data={posts.map((post, index) => {
       return {
         id: post.id,
         imageSrc: post.image,
         href: post.permalink,
-        label: 'Анонс',
+        label: 'Announcement',
         title: post.excerpt ?? post.title,
         direction: index % 2 ? 'left' : ('right' as 'left' | 'right'),
       };

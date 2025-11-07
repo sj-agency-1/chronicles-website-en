@@ -6,12 +6,12 @@ import Textarea from '~/components/common/Textarea.astro';
 import Button from '../common/Button.astro';
 
 const services = [
-  'Онлайн консультация',
-  'Аудит бизнеса',
-  'Менторство',
-  'Личный бренд',
-  'Встреча-консультация',
-  'Выездная консультация',
+  'Online Consultation',
+  'Business Audit',
+  'Mentorship',
+  'Personal Branding',
+  'Meeting Consultation',
+  'On-site Consultation',
 ];
 
 let consultationSubmitUrl = FORMS_URLS.consultationFormTestUrl;
@@ -21,18 +21,18 @@ if (import.meta.env.PROD) {
 ---
 
 <form id="consultation-form" method="post" action={consultationSubmitUrl} class="flex flex-col gap-4">
-  <Input name="consultation-form__name" label="Ваше ФИО" placeholder="Введите ваше ФИО" required />
-  <Input name="consultation-form__email" label="Email" placeholder="Введите ваш Email" type="email" required />
+  <Input name="consultation-form__name" label="Your Full Name" placeholder="Enter your full name" required />
+  <Input name="consultation-form__email" label="Email" placeholder="Enter your email" type="email" required />
   <Select
     name="consultation-form__service"
-    label="Услуга (необязательно)"
-    placeholder="Выберите услугу из списка"
+    label="Service (optional)"
+    placeholder="Select a service from the list"
     options={services}
   />
   <Textarea
     name="consultation-form__details"
-    label="Дополнительные детали (необязательно)"
-    placeholder="Опишите вашу ситуацию или задачу подробнее..."
+    label="Additional Details (optional)"
+    placeholder="Describe your situation or task in more detail..."
     maxlength={2048}
   />
   <div>
@@ -41,7 +41,7 @@ if (import.meta.env.PROD) {
   <Button
     id="consultation-form__submit-button"
     class="max-w-fit"
-    text="Отправить заявку"
+    text="Submit Request"
     variant="primary"
     size="small"
     type="button"
@@ -89,14 +89,14 @@ if (import.meta.env.PROD) {
 
     // Validate form
     if (!validateForm()) {
-      showMessage('Пожалуйста, заполните все обязательные поля.', true);
+      showMessage('Please fill in all required fields.', true);
       return;
     }
 
     try {
       // Disable submit button
       submitButton.disabled = true;
-      submitButton.textContent = 'Отправка...';
+      submitButton.textContent = 'Sending...';
 
       const formData = new FormData(form);
       const response = await fetch(form.action, {
@@ -109,16 +109,16 @@ if (import.meta.env.PROD) {
       }
 
       // Show success message
-      showMessage('Ваша заявка успешно отправлена! Я свяжусь с вами в течение 48 часов.');
+      showMessage('Your request has been successfully sent! I will contact you within 48 hours.');
       form.reset();
     } catch (error: unknown) {
       // Show error message
       console.error('Form submission error:', error);
-      showMessage('Произошла ошибка при отправке формы. Пожалуйста, попробуйте снова.', true);
+      showMessage('An error occurred while submitting the form. Please try again.', true);
     } finally {
       // Re-enable submit button
       submitButton.disabled = false;
-      submitButton.textContent = 'Отправить заявку';
+      submitButton.textContent = 'Submit Request';
     }
   });
 </script>

@@ -13,7 +13,7 @@ const { page } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;
 
 const metadata = {
-  title: 'Проекты',
+  title: 'Projects',
   ignoreTitleTemplate: true,
   robots: {
     index: blogListRobots?.index && currentPage === 1,
@@ -24,8 +24,8 @@ const metadata = {
   },
 };
 const breadCrumbLinks = [
-  { text: 'Главная', href: '/' },
-  { text: 'Проекты', href: '/project' },
+  { text: 'Home', href: '/' },
+  { text: 'Projects', href: '/project' },
 ];
 ---
 
@@ -34,13 +34,13 @@ const breadCrumbLinks = [
   {metadata}
   heroItems={[
     {
-      title: 'Проекты',
+      title: 'Projects',
       bgImage: '~/assets/images/pages/informative.webp',
     },
   ]}
 >
   <Projects
-    title="Проекты"
+    title="Projects"
     layout={{
       columns: 3,
       rows: 2,
