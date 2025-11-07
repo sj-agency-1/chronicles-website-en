@@ -23,7 +23,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
-  site: 'https://business-pathfinder-chronicles.com',
+  site: 'https://business-pathfinder.com',
 
   integrations: [
     tailwind({
