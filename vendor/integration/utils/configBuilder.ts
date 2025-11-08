@@ -7,7 +7,7 @@ export type Config = {
   socials?: SocialsConfig;
   contact?: ContactConfig;
   donation?: DonationConfig;
-  formsUrls?: FormsUrls;
+  formsUrls?: FormsUrlsConfig;
   metadata?: MetaDataConfig;
   i18n?: I18NConfig;
   apps?: {
@@ -51,7 +51,7 @@ export interface DonationConfig {
   bankCardPaymentLink?: string;
 }
 
-export interface FormsUrls {
+export interface FormsUrlsConfig {
   consultationFormTestUrl?: string;
   consultationFormUrl?: string;
   vacancyFormTestUrl?: string;
@@ -217,7 +217,7 @@ const getFormsUrls = (config: Config) => {
     vacancyFormUrl: '',
   };
 
-  return merge({}, _default, config?.formsUrls ?? {}) as FormsUrls;
+  return merge({}, _default, config?.formsUrls ?? {}) as FormsUrlsConfig;
 };
 
 const getMetadata = (config: Config) => {
