@@ -437,41 +437,27 @@ const GalleryPaths = {
       src: '~/assets/images/gallery/TeaStics/IMG-20210906-WA0001.webp',
     },
   ],
-}
+};
 
 export const GalleryData = [
   {
     title: 'China',
-    items: [
-      ...GalleryPaths.PharmaChina,
-      ...GalleryPaths.SticsChina,
-    ]
+    items: [...GalleryPaths.PharmaChina, ...GalleryPaths.SticsChina],
   },
   {
     title: 'European Union',
-    items: [
-      ...GalleryPaths.EU,
-    ]
+    items: [...GalleryPaths.EU],
   },
   {
     title: 'Ginger&Berry Tea "Live Nutrients"',
-    items: [
-      ...GalleryPaths.TeaPromo,
-      ...GalleryPaths.TeaStics,
-    ]
+    items: [...GalleryPaths.TeaPromo, ...GalleryPaths.TeaStics],
   },
   {
     title: 'USA&CANADA',
-    items: [
-      ...GalleryPaths.SticsUSA,
-    ]
+    items: [...GalleryPaths.SticsUSA],
   },
   {
     title: 'DrinkOff',
-    items: [
-      ...GalleryPaths.Production,
-      ...GalleryPaths.DrinkOff,
-      ...GalleryPaths.HoneyStics,
-    ]
+    items: [...GalleryPaths.Production, ...GalleryPaths.DrinkOff, ...GalleryPaths.HoneyStics],
   },
-]
+];
