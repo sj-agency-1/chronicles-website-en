@@ -441,33 +441,33 @@ const GalleryPaths = {
 
 export const GalleryData = [
   {
-    title: 'Китай',
+    title: 'China',
     items: [
       ...GalleryPaths.PharmaChina,
       ...GalleryPaths.SticsChina,
     ]
   },
   {
-    title: 'Европейский союз',
+    title: 'European Union',
     items: [
       ...GalleryPaths.EU,
     ]
   },
   {
-    title: 'Имбирно-ягодный чай "Живые витамины"',
+    title: 'Ginger&Berry Tea "Live Nutrients"',
     items: [
       ...GalleryPaths.TeaPromo,
       ...GalleryPaths.TeaStics,
     ]
   },
   {
-    title: 'США и Канада',
+    title: 'USA&CANADA',
     items: [
       ...GalleryPaths.SticsUSA,
     ]
   },
   {
-    title: 'Дринкофф',
+    title: 'DrinkOff',
     items: [
       ...GalleryPaths.Production,
       ...GalleryPaths.DrinkOff,
