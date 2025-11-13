@@ -1,0 +1,137 @@
+---
+import { SITE, METADATA } from 'astrowind:config';
+import { getCanonical } from '~/utils/permalinks';
+import { fetchPosts } from '~/utils/blog';
+import { fetchProjects } from '~/utils/project';
+import { SkillType, getSkillTitle, getSkillLink } from '~/utils/skills';
+
+// Fetch all data
+const posts = await fetchPosts();
+const projects = await fetchProjects();
+
+// Site base URL
+const siteUrl = SITE.site;
+
+// Skills data with descriptions
+const skillsData = [
+  {
+    type: SkillType.BusinessAnalysis,
+    title: getSkillTitle(SkillType.BusinessAnalysis),
+    url: getCanonical(getSkillLink(SkillType.BusinessAnalysis)),
+    description:
+      'Sales audit, KPI, Crisis management. I turn chaos into a system and find systemic failures worth millions.',
+  },
+  {
+    type: SkillType.BusinessCommunicationAndMediation,
+    title: getSkillTitle(SkillType.BusinessCommunicationAndMediation),
+    url: getCanonical(getSkillLink(SkillType.BusinessCommunicationAndMediation)),
+    description:
+      'Corporate conflict resolution, complex negotiations. I help avoid legal landmines and courtroom battles.',
+  },
+  {
+    type: SkillType.CrisisManagement,
+    title: getSkillTitle(SkillType.CrisisManagement),
+    url: getCanonical(getSkillLink(SkillType.CrisisManagement)),
+    description:
+      'EBITDA search, business rehabilitation and financial recovery. Not consulting, but taking responsibility and implementing financial recovery plans.',
+  },
+  {
+    type: SkillType.MarketingAndAdv,
+    title: getSkillTitle(SkillType.MarketingAndAdv),
+    url: getCanonical(getSkillLink(SkillType.MarketingAndAdv)),
+    description: 'Strategic marketing, resonance and insight. Why word-of-mouth is a myth and relevance is paramount.',
+  },
+  {
+    type: SkillType.InternetMarketing,
+    title: getSkillTitle(SkillType.InternetMarketing),
+    url: getCanonical(getSkillLink(SkillType.InternetMarketing)),
+    description:
+      'End-to-end analytics (ROMI/ROAS), JTBD and technical SEO. A digital commander who counts profit, not CTR.',
+  },
+  {
+    type: SkillType.SalesManagement,
+    title: getSkillTitle(SkillType.SalesManagement),
+    url: getCanonical(getSkillLink(SkillType.SalesManagement)),
+    description:
+      'Building sales systems and Value Proposition. Logic, common sense and adaptability, not outdated scripts.',
+  },
+  {
+    type: SkillType.BusinessDevelopment,
+    title: getSkillTitle(SkillType.BusinessDevelopment),
+    url: getCanonical(getSkillLink(SkillType.BusinessDevelopment)),
+    description:
+      'Finding new growth points, diversification and launching products from scratch. The ability to anticipate change.',
+  },
+  {
+    type: SkillType.FindInvestments,
+    title: getSkillTitle(SkillType.FindInvestments),
+    url: getCanonical(getSkillLink(SkillType.FindInvestments)),
+    description:
+      'M&A deals, business packaging, Due Diligence. Protection from legal landmines in the process of selling/buying companies.',
+  },
+];
+
+// Build JSON-LD structure
+const jsonLdGraph = [
+  // WebSite
+  {
+    '@type': 'WebSite',
+    url: siteUrl,
+    name: SITE.name,
+    description: METADATA.description,
+  },
+  // Organization
+  {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: siteUrl,
+    logo: {
+      '@type': 'ImageObject',
+      url: new URL('/favicon.svg', siteUrl).toString(),
+    },
+  },
+  // Skills ItemList
+  {
+    '@type': 'ItemList',
+    name: 'Skills and Services',
+    itemListElement: skillsData.map((skill, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: skill.title,
+      url: skill.url,
+      description: skill.description,
+    })),
+  },
+  // Blog Posts ItemList
+  {
+    '@type': 'ItemList',
+    name: 'Blog Articles',
+    itemListElement: posts.slice(0, 10).map((post, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: getCanonical(post.permalink),
+      name: post.title,
+      description: post.excerpt || post.title,
+    })),
+  },
+  // Projects ItemList
+  {
+    '@type': 'ItemList',
+    name: 'Projects',
+    itemListElement: projects.slice(0, 10).map((project, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: getCanonical(project.permalink),
+      name: project.title,
+      description: project.excerpt || project.title,
+    })),
+  },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': jsonLdGraph,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
