@@ -251,7 +251,7 @@ const GalleryPaths = {
       src: '~/assets/images/gallery/SticsChina/IMG-20190505-WA0001.webp',
     },
     {
-      src: '~/assets/images/gallery/SticsChina/IMG-20190505-WA0002.webp',
+      src: '~/assets/images/gallery/SticsChina/IMG-20190505-WA0008.webp',
     },
     {
       src: '~/assets/images/gallery/SticsChina/IMG-20190505-WA0003.webp',
@@ -269,7 +269,7 @@ const GalleryPaths = {
       src: '~/assets/images/gallery/SticsChina/IMG-20190505-WA0007.webp',
     },
     {
-      src: '~/assets/images/gallery/SticsChina/IMG-20190505-WA0008.webp',
+      src: '~/assets/images/gallery/SticsChina/IMG-20190505-WA0002.webp',
     },
     {
       src: '~/assets/images/gallery/SticsChina/IMG-20190510-WA0000.webp',
