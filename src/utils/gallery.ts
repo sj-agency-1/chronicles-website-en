@@ -82,7 +82,7 @@ const GalleryPaths = {
       src: '~/assets/images/gallery/PharmaChina/FB_IMG_1606318794555.webp',
     },
     {
-      src: '~/assets/images/gallery/PharmaChina/IMG-20190513-WA0026.webp',
+      src: '~/assets/images/gallery/PharmaChina/IMG-20190513-WA0018.webp',
     },
     {
       src: '~/assets/images/gallery/PharmaChina/IMG-20190513-WA0003.webp',
@@ -100,7 +100,7 @@ const GalleryPaths = {
       src: '~/assets/images/gallery/PharmaChina/IMG-20190513-WA0013.webp',
     },
     {
-      src: '~/assets/images/gallery/PharmaChina/IMG-20190513-WA0018.webp',
+      src: '~/assets/images/gallery/PharmaChina/IMG-20190513-WA0026.webp',
     },
     {
       src: '~/assets/images/gallery/PharmaChina/IMG-20190513-WA0001.webp',
