@@ -1,14 +1,14 @@
 import type { Post } from '~/types';
 
 export enum SkillType {
-  CrisisManagement = 'crisis-management',
-  BusinessAnalysis = 'business-analytics',
-  BusinessDevelopment = 'grow-business',
-  SalesManagement = 'sales-forces',
-  MarketingAndAdv = 'marketing-advertising',
-  InternetMarketing = 'digital-marketing',
-  BusinessCommunicationAndMediation = 'business-negotiations-mediation',
-  FindInvestments = 'merger-acquisition',
+  CrisisManagement = 'crisis-response',
+  BusinessAnalysis = 'strategic-analytics',
+  BusinessDevelopment = 'market-expansion',
+  SalesManagement = 'sales-forces-optimization',
+  MarketingAndAdv = 'adv-and-marketing',
+  InternetMarketing = 'digital-performance',
+  BusinessCommunicationAndMediation = 'deal-negotiation-and-mediation',
+  FindInvestments = 'funding-and-investor-relations',
 }
 
 export interface Skill extends Post {
@@ -18,21 +18,21 @@ export interface Skill extends Post {
 export const getSkillTitle = (skill: SkillType): string => {
   switch (skill) {
     case SkillType.CrisisManagement:
-      return 'Crisis Management';
+      return 'Crisis Response';
     case SkillType.BusinessAnalysis:
-      return 'Business Analysis';
+      return 'Strategic Analytics';
     case SkillType.BusinessDevelopment:
-      return 'Business Development';
+      return 'Market Expansion';
     case SkillType.SalesManagement:
-      return 'Sales Management';
+      return 'Sales Forces Optimization';
     case SkillType.MarketingAndAdv:
-      return 'Marketing and Advertising';
+      return 'ADV & Marketing';
     case SkillType.InternetMarketing:
-      return 'Internet Marketing';
+      return 'Digital Performance';
     case SkillType.BusinessCommunicationAndMediation:
-      return 'Business Negotiation. Mediation';
+      return 'Deal Negotiation & Mediation';
     case SkillType.FindInvestments:
-      return 'Attracting Investments';
+      return 'Funding & Investor Relations';
   }
 };
 
