@@ -46,7 +46,7 @@ metadata:
   openGraph:
     site_name: Chronicles of The Business Pathfinder
     images:
-      - url: '~/assets/images/default-1.webp'
+      - url: '~/assets/images/defaultimage.webp?v=2'
         width: 1200
         height: 628
     type: website
