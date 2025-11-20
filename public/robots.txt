@@ -1,4 +1,8 @@
 User-agent: *
-Disallow: /
+
+Disallow: /gallery
+Disallow: /contacts
+
+Allow: /
 
 Sitemap: https://business-pathfinder.com/sitemap-index.xml
