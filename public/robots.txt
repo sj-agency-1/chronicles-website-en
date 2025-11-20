@@ -5,4 +5,4 @@ Disallow: /contacts
 
 Allow: /
 
-Sitemap: https://business-pathfinder.com/sitemap-index.xml
+Sitemap: https://business-pathfinder.com/sitemap.xml
