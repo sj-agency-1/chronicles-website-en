@@ -198,6 +198,7 @@ const { class: className = '' } = Astro.props as Props;
       const children = Array.from(tempDiv.children);
       // Skip splitting on the first H2 so it stays on the same page as preceding content (e.g. the H1)
       let firstH2Skipped = false;
+      let secondH2Skipped = false;
 
       children.forEach((child) => {
         if (child.tagName === 'H2') {
@@ -205,6 +206,10 @@ const { class: className = '' } = Astro.props as Props;
             // Append the first H2 to the current page instead of starting a new one
             currentPage += child.outerHTML;
             firstH2Skipped = true;
+          } else if (!secondH2Skipped) {
+            // Append the second H2 to the current page as well
+            currentPage += child.outerHTML;
+            secondH2Skipped = true;
           } else {
             if (currentPage) {
               pages.push(currentPage);
