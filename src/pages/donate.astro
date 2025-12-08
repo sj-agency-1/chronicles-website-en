@@ -3,7 +3,7 @@ import { DONATION } from 'astrowind:config';
 import Content from '~/components/common/Content.astro';
 import PageLayout from '~/layouts/PageLayout.astro';
 import Button from '~/components/common/Button.astro';
-import CopyText from '~/components/common/CopyText.astro';
+// import CopyText from '~/components/common/CopyText.astro';
 
 const metadata = {
   title: 'Donation — Supporting the Project',
@@ -58,8 +58,8 @@ const bankLink = DONATION['bankCardPaymentLink'] || 'https://www.example.com/ban
       We value your anonymity and security, which is why the preferred method of support is payment via cryptocurrency.
     </p>
 
-    <h3>1. Cryptocurrency (Preferred Method)</h3>
-    <table class="table-auto border-collapse border border-gray-400 mt-4 mb-6">
+    <!-- <h3>1. Cryptocurrency (Preferred Method)</h3> -->
+    <!-- <table class="table-auto border-collapse border border-gray-400 mt-4 mb-6">
       <thead>
         <tr class="bg-gray-100">
           <th class="border border-gray-400 px-4 py-2">Currency</th>
@@ -90,15 +90,15 @@ const bankLink = DONATION['bankCardPaymentLink'] || 'https://www.example.com/ban
           </td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
 
-    <h4>Donation Instructions</h4>
+    <!-- <h4>Donation Instructions</h4>
     <ol class="list-decimal list-inside mb-6">
       <li>Copy the corresponding wallet address listed above.</li>
       <li>Open your cryptocurrency wallet or exchange account.</li>
       <li>Ensure you have selected the correct network.</li>
       <li>Specify the amount and confirm the transaction.</li>
-    </ol>
+    </ol> -->
 
     <h3>2. Traditional Methods (PayPal / Other)</h3>
     <p>If you prefer to use traditional payment methods, please use the link below.</p>
