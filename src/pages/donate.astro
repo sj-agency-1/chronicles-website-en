@@ -103,8 +103,8 @@ const bankLink = DONATION['bankCardPaymentLink'] || 'https://www.example.com/ban
     <h3>2. Traditional Methods (PayPal / Other)</h3>
     <p>If you prefer to use traditional payment methods, please use the link below.</p>
     <div class="flex flex-col sm:flex-row gap-4 mt-4">
-      <Button href={bankLink} text="Pay by Bank Card" target="_blank" variant="primary" type="link" />
-      <Button href={cryptoLink} text="Pay with Cryptocurrency" target="_blank" variant="primary" type="link" />
+      <Button class="donate-page-button" href={bankLink} text="Pay by Bank Card" target="_blank" variant="primary" type="link" />
+      <Button class="donate-page-button" href={cryptoLink} text="Pay with Cryptocurrency" target="_blank" variant="primary" type="link" />
     </div>
 
     <p class="mt-8">
@@ -117,3 +117,10 @@ const bankLink = DONATION['bankCardPaymentLink'] || 'https://www.example.com/ban
     </p>
   </Content>
 </PageLayout>
+
+<style>
+  .donate-page-button {
+    color: white;
+    text-decoration: none;
+  }
+</style>
