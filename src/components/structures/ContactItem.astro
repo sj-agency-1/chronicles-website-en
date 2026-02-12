@@ -12,7 +12,7 @@ const { contactType } = Astro.props as Props;
 const getContactLink = (contactType: ContactProps['type']) => {
   switch (contactType) {
     case 'telegram':
-      return `https://t.me/${CONTACT.telegramUsername}`;
+      return `@https://t.me/${CONTACT.telegramUsername}`;
     case 'whatsapp':
       return `https://wa.me/${CONTACT.whatsappNumber}`;
     case 'email':
