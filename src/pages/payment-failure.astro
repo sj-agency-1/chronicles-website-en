@@ -1,0 +1,39 @@
+---
+import Content from '~/components/common/Content.astro';
+import Button from '~/components/common/Button.astro';
+import PageLayout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Something Went Wrong',
+  description: 'There was an issue processing your payment. Please try again or contact us for assistance.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
+const breadCrumbLinks = [
+  { text: 'Home', href: '/' },
+  { text: 'Donation', href: '/donate' },
+  { text: 'Payment Issue', href: '/payment-failure' },
+];
+---
+
+<PageLayout {breadCrumbLinks} {metadata}>
+  <Content>
+    <h1>Something Went Wrong</h1>
+    <p>Unfortunately, there was an issue processing your payment. Your funds have not been charged.</p>
+    <p>
+      This could have happened due to a temporary issue with the payment service. Please try again or use an alternative
+      payment method.
+    </p>
+    <p>
+      If the problem persists, please <a href="/contacts" class="underline font-bold">contact us</a> and we will be happy
+      to assist you.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 mt-4">
+      <Button href="/donate" text="Try Again" variant="primary" type="link" />
+      <Button href="/" text="Return to Home" variant="outlined" type="link" />
+    </div>
+  </Content>
+</PageLayout>
