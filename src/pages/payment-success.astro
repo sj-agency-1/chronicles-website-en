@@ -1,0 +1,42 @@
+---
+import Content from '~/components/common/Content.astro';
+import Button from '~/components/common/Button.astro';
+import PageLayout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Thank You for Your Donation!',
+  description:
+    'Your payment has been successfully processed. Thank you for supporting the Business Pathfinder Chronicles project.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
+const breadCrumbLinks = [
+  { text: 'Home', href: '/' },
+  { text: 'Donation', href: '/donate' },
+  { text: 'Thank You', href: '/payment-success' },
+];
+---
+
+<PageLayout {breadCrumbLinks} {metadata}>
+  <Content>
+    <h1>Thank You for Your Support!</h1>
+    <p>
+      Your payment has been successfully processed. We sincerely appreciate your generous contribution to the "Business
+      Pathfinder Chronicles" project.
+    </p>
+    <p>
+      Your support helps us continue creating high-quality, in-depth content and develop new materials for our readers.
+    </p>
+    <p>
+      If you have any questions regarding your payment, please don't hesitate to
+      <a href="/contacts" class="underline font-bold">contact us</a>.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 mt-4">
+      <Button href="/" text="Return to Home" variant="primary" type="link" />
+      <Button href="/donate" text="Make Another Donation" variant="outlined" type="link" />
+    </div>
+  </Content>
+</PageLayout>
